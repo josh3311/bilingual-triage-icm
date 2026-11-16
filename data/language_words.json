@@ -1,0 +1,5 @@
+{
+  "fr_words": ["le", "la", "les", "un", "une", "des", "du", "de", "je", "mon", "ma", "mes", "vous", "nous", "est", "sont", "pas", "pour", "avec", "que", "qui", "dans", "sur", "et", "ou", "mais", "bonjour", "merci", "votre", "vos", "suis", "ai", "avez", "ne", "ce", "cette", "au", "aux", "il", "elle", "commande", "colis", "svp", "toujours", "depuis", "encore"],
+  "en_words": ["the", "is", "are", "was", "were", "i", "my", "you", "your", "we", "our", "and", "for", "with", "not", "have", "has", "this", "that", "it", "to", "of", "in", "please", "thank", "hello", "order", "package", "account", "been", "would", "could", "can", "will", "but", "what", "when", "why", "how", "from", "they", "them", "their", "there", "get", "got", "still", "just"],
+  "fr_elision": ["l", "d", "j", "n", "qu", "c", "s", "m", "t"]
+}

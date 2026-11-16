@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bilingual support triage with ICM</title>
+<meta name="description" content="See how an ICM workspace triages English and French support tickets in five checked stages, with a person approving every reply.">
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1b;--mute:#62625d;--line:#e2e1dc;--accent:#2457c5;--accent-bg:#e8eefb;--ok:#1a7f4b;--ok-bg:#e4f4ec;--bad:#b3261e;--bad-bg:#fbe9e7;--warn:#8a5a00;--warn-bg:#fdf1d8;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#141413;--card:#1e1e1c;--ink:#ecebe6;--mute:#a3a29b;--line:#34332f;--accent:#8fb0ff;--accent-bg:#1f2a44;--ok:#6fd49a;--ok-bg:#16301f;--bad:#ff9a92;--bad-bg:#3a1b18;--warn:#f3c56b;--warn-bg:#352a0f}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+header{padding:28px 20px 8px;max-width:1180px;margin:0 auto}
+h1{font-size:26px;margin:0 0 6px}
+h2{font-size:17px;margin:0 0 8px}
+h3{font-size:14px;margin:16px 0 6px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+p{margin:0 0 10px}
+.sub{color:var(--mute);max-width:760px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.badge{font-size:13px;padding:3px 10px;border-radius:999px;background:var(--accent-bg);color:var(--accent);border:1px solid transparent}
+.badge.honest{background:var(--warn-bg);color:var(--warn)}
+main{max-width:1180px;margin:0 auto;padding:8px 20px 60px;display:grid;grid-template-columns:260px 1fr;gap:20px}
+@media (max-width:820px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.list{max-height:640px;overflow:auto;padding:8px}
+.list button{display:flex;width:100%;gap:8px;align-items:center;text-align:left;padding:7px 8px;border:0;background:none;color:inherit;border-radius:8px;cursor:pointer;font:inherit;font-size:14px}
+.list button:hover{background:var(--accent-bg)}
+.list button[aria-current=true]{background:var(--accent-bg);outline:2px solid var(--accent)}
+.list .id{font-family:var(--mono);font-size:12px;color:var(--mute);width:38px}
+.list .subj{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.tag{font-size:11px;padding:1px 6px;border-radius:6px;background:var(--line);color:var(--mute);font-weight:600}
+.tag.p1{background:var(--bad-bg);color:var(--bad)}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.steps button{flex:1 1 120px;padding:9px 8px;border:1px solid var(--line);background:var(--card);color:inherit;border-radius:10px;cursor:pointer;font:inherit;font-size:14px;text-align:center}
+.steps button small{display:block;color:var(--mute);font-size:12px}
+.steps button[aria-selected=true]{border-color:var(--accent);background:var(--accent-bg);font-weight:600}
+.who{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;margin-bottom:8px}
+.who.script{background:var(--ok-bg);color:var(--ok)}
+.who.claude{background:var(--accent-bg);color:var(--accent)}
+.who.person{background:var(--warn-bg);color:var(--warn)}
+.box{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--bg);white-space:pre-wrap;font-size:14.5px}
+.mono{font-family:var(--mono);font-size:13px}
+.kv{display:grid;grid-template-columns:150px 1fr;gap:4px 10px;font-size:14.5px}
+.kv dt{color:var(--mute)}.kv dd{margin:0}
+.res{display:flex;gap:8px;align-items:flex-start;font-size:14.5px;padding:3px 0}
+.res .dot{flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700}
+.res.ok .dot{background:var(--ok-bg);color:var(--ok)}
+.res.bad .dot{background:var(--bad-bg);color:var(--bad)}
+.banner{padding:10px 12px;border-radius:10px;font-weight:600;margin:10px 0}
+.banner.ok{background:var(--ok-bg);color:var(--ok)}.banner.bad{background:var(--bad-bg);color:var(--bad)}.banner.warn{background:var(--warn-bg);color:var(--warn)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.btn{padding:8px 14px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:inherit;font-size:14px;cursor:pointer}
+.btn.ghost{background:none;color:var(--accent)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+details{margin-top:14px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--card)}
+summary{cursor:pointer;font-weight:600;font-size:14.5px}
+pre{white-space:pre-wrap;font-family:var(--mono);font-size:12.5px;margin:8px 0 0;max-height:340px;overflow:auto}
+input,select{font:inherit;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:inherit;width:100%}
+label{font-size:13px;color:var(--mute);display:block;margin:8px 0 4px}
+footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--mute);font-size:13px}
+a{color:var(--accent)}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Bilingual support triage with ICM</h1>
+  <p class="sub">A support ticket in English or French goes through five stages. Scripts count and check. Claude skills read and write. A person approves every reply before anything leaves. Pick a ticket and walk through it.</p>
+  <div class="badges">
+    <span class="badge honest">Recorded Claude run. The scripts run live in your browser.</span>
+    <span class="badge">No tokens used by default</span>
+    <span class="badge">30 synthetic tickets, EN and FR</span>
+    <span class="badge">Nothing is ever sent</span>
+  </div>
+</header>
+
+<main>
+  <aside class="card list" aria-label="Tickets"><div id="tickets"></div></aside>
+
+  <section>
+    <div class="card">
+      <div class="steps" id="steps" role="tablist" aria-label="Stages"></div>
+      <div id="panel" role="tabpanel"></div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h2>Check the whole batch</h2>
+      <p class="sub">Runs the same checks on all 30 tickets, then audits a fixed sample of 20 (seed 42).</p>
+      <div class="row">
+        <button class="btn" id="runAll">Run all checks</button>
+        <button class="btn ghost" id="tamper">Try to break it</button>
+        <button class="btn ghost" id="reset">Reset</button>
+      </div>
+      <div id="batch" aria-live="polite"></div>
+    </div>
+
+    <details id="live">
+      <summary>Optional: try it live with your own Anthropic API key</summary>
+      <p class="sub" style="margin-top:8px">Off by default. The key stays in this page's memory, goes only to api.anthropic.com, and is never saved. Calls are billed to your own account. Anyone can use the recorded run above without a key.</p>
+      <label for="apiKey">API key</label>
+      <input id="apiKey" type="password" autocomplete="off" placeholder="sk-ant-...">
+      <label for="model">Model</label>
+      <input id="model" value="claude-haiku-5-5">
+      <div class="row"><button class="btn" id="runLive" disabled>Run the selected ticket live</button></div>
+      <div id="liveOut" aria-live="polite"></div>
+    </details>
+  </section>
+</main>
+<footer>
+  Source and instructions: <a href="https://github.com/josh3311/bilingual-triage-icm">github.com/josh3311/bilingual-triage-icm</a>.
+  All tickets are invented. This page uses no cookies and sends nothing anywhere unless you use your own key above.
+</footer>
+
+<script src="triage.js"></script>
+<script>
+"use strict";
+const T = window.Triage;
+const STAGES = [
+  { key: "01_intake", name: "1 Intake", sub: "script" },
+  { key: "02_classify", name: "2 Classify", sub: "Claude skill" },
+  { key: "03_route", name: "3 Route", sub: "script" },
+  { key: "04_reply", name: "4 Reply", sub: "Claude skill" },
+  { key: "05_audit", name: "5 Audit", sub: "script" },
+  { key: "gate", name: "6 Approval", sub: "a person" },
+];
+const state = { data: null, rows: [], selected: "T001", stage: "01_intake", tampered: null, approved: null };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const row = () => state.rows.find((r) => r.id === state.selected);
+const res = (ok, text) => `<div class="res ${ok ? "ok" : "bad"}"><span class="dot" aria-hidden="true">${ok ? "✓" : "✕"}</span><span><span class="sr">${ok ? "Passed: " : "Failed: "}</span>${esc(text)}</span></div>`;
+
+function who(kind) {
+  const map = { script: ["script", "Script. No AI, plain rules."], claude: ["claude", "Claude skill. Recorded output."], person: ["person", "A person decides."] };
+  return `<span class="who ${map[kind][0]}">${map[kind][1]}</span>`;
+}
+function contextBox(key) {
+  if (!state.data.contexts[key]) return "";
+  return `<details><summary>The rules for this stage (${key}/CONTEXT.md)</summary><pre>${esc(state.data.contexts[key])}</pre></details>`;
+}
+
+function renderTickets() {
+  $("tickets").innerHTML = state.rows.map((r) => `
+    <button data-id="${r.id}" aria-current="${r.id === state.selected}">
+      <span class="id">${r.id}</span><span class="subj">${esc(r.subject)}</span>
+      <span class="tag">${r.language}</span><span class="tag ${r.priority === "P1" ? "p1" : ""}">${r.priority}</span>
+    </button>`).join("");
+}
+function renderSteps() {
+  $("steps").innerHTML = STAGES.map((s) => `<button role="tab" data-stage="${s.key}" aria-selected="${s.key === state.stage}">${s.name}<small>${s.sub}</small></button>`).join("");
+}
+
+function panelIntake(r) {
+  const valid = T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at }, new Set());
+  const d = T.detect(r.subject + " " + r.body, state.data.words);
+  return `${who("script")}
+    <h2>Check the ticket and tag its language</h2>
+    <h3>Ticket ${r.id}, received ${r.received_at}</h3>
+    <div class="box"><strong>${esc(r.subject)}</strong>\n${esc(r.body)}</div>
+    <h3>Checks</h3>
+    ${res(!valid, valid ? "Rejected: " + valid : "All four fields present, id and date well formed, lengths in range")}
+    ${res(true, `Language ${d.language}, confidence ${d.confidence} (French signals ${d.fr}, English signals ${d.en})`)}
+    ${contextBox("01_intake")}`;
+}
+function panelClassify(r) {
+  const out = { id: r.id, category: r.category, priority: r.priority, needs_human: r.needs_human, reason: r.reason };
+  const problems = T.classificationProblems(out, state.data.config);
+  return `${who("claude")}
+    <h2>Claude reads the ticket and picks a category and a priority</h2>
+    <p>The skill <code>triage-ticket</code> may only answer with 6 categories and 3 priorities. P1 means money taken wrongly, a locked account, a package missing 14 days or more, or a legal angle.</p>
+    <h3>Recorded skill output</h3><div class="box mono">${esc(JSON.stringify(out, null, 2))}</div>
+    <h3>Checks</h3>
+    ${problems.length ? problems.map((p) => res(false, p)).join("") : res(true, "Category and priority are allowed values, needs_human is true or false, reason is not empty")}
+    ${r.needs_human ? `<div class="banner warn">needs_human is true, so the reply will say a team member reviews it personally.</div>` : ""}
+    ${contextBox("02_classify")}
+    <details><summary>The skill instructions (triage-ticket/SKILL.md)</summary><pre>${esc(state.data.skills["triage-ticket"])}</pre></details>`;
+}
+function panelRoute(r) {
+  const table = Object.entries(state.data.routing).map(([c, t]) => `<tr><td>${c === r.category ? "<strong>" + c + "</strong>" : c}</td><td>${c === r.category ? "<strong>" + t + "</strong>" : t}</td></tr>`).join("");
+  return `${who("script")}
+    <h2>Look up the one team that owns this category</h2>
+    <p>No AI here. One category gives exactly one team, so one ticket never lands on two desks.</p>
+    <dl class="kv"><dt>Category</dt><dd>${r.category}</dd><dt>Team</dt><dd><strong>${r.team || "STOP: category not in the table"}</strong></dd><dt>Urgent</dt><dd>${r.urgent ? "Yes (P1)" : "No"}</dd></dl>
+    <h3>The routing table</h3><table class="box" style="width:100%;border-collapse:collapse"><tbody>${table}</tbody></table>
+    <h3>Checks</h3>${res(!!r.team, r.team ? "Category found in the routing table" : "Unknown category: the script stops and never guesses")}
+    ${contextBox("03_route")}`;
+}
+function panelReply(r) {
+  const problems = T.replyProblems(r, state.data.config, state.data.routing, state.data.words);
+  const count = T.sentenceCount(r.draft);
+  return `${who("claude")}
+    <h2>Claude writes a short draft in the ticket's own language</h2>
+    <p>The skill <code>draft-reply</code> writes ${r.language === "FR" ? "French with vous" : "English"}. It may not promise a refund, a date or a time limit.</p>
+    <h3>Draft (${r.language}, ${count} sentences)</h3><div class="box">${esc(r.draft)}</div>
+    <h3>Checks</h3>
+    ${problems.length ? problems.map((p) => res(false, p)).join("") : res(true, `${count} sentences, right language, no banned promise phrase, no team names or priority labels, status waiting_for_approval`)}
+    ${contextBox("04_reply")}
+    <details><summary>The skill instructions (draft-reply/SKILL.md)</summary><pre>${esc(state.data.skills["draft-reply"])}</pre></details>`;
+}
+function auditResult() {
+  return T.audit(state.rows, state.data.config, state.data.routing, state.data.words);
+}
+function panelAudit(r) {
+  const a = auditResult();
+  const mine = a.results.find((x) => x.id === r.id);
+  const checks = Object.keys(T.CHECK_NAMES).map((n) => {
+    const failed = T.failedChecks(r, state.data.config, state.data.routing, state.data.words).includes(Number(n));
+    return res(!failed, `Check ${n}: ${T.CHECK_NAMES[n]}`);
+  }).join("");
+  return `${who("script")}
+    <h2>Audit a fixed sample of 20 tickets with 7 checks each</h2>
+    <p>The sample is picked with a fixed seed, so anyone gets the same 20. A pass needs every sampled ticket to pass every check.</p>
+    <div class="banner ${a.verdict === "PASS" ? "ok" : "bad"}">AUDIT ${a.verdict} ${a.passed_count}/${a.sample_size}</div>
+    ${a.verdict === "FAIL" ? a.results.filter((x) => !x.passed).map((x) => `<p>${x.id} failed checks ${x.failed_checks.join(", ")}. Go back and fix: <strong>${[...new Set(x.failed_checks.map((c) => T.STAGE_FOR_CHECK[c]))].join(", ")}</strong>.</p>`).join("") : ""}
+    <h3>${r.id} ${mine ? "is in the sample" : "is not in the sample (the sample has 20 of 30)"}</h3>${checks}
+    <h3>Sampled ids</h3><div class="box mono">${a.sampled_ids.join(" ")}</div>
+    ${contextBox("05_audit")}`;
+}
+function panelGate() {
+  const a = auditResult();
+  const pass = a.verdict === "PASS";
+  const body = state.approved
+    ? `<div class="banner ok">${state.approved === "approved" ? "Approved. Drafts are in the outbox file below. Still nothing is sent." : "Returned. Nothing was exported. Fix the stage named by the audit and run again."}</div>`
+    : "";
+  const outbox = state.approved === "approved" ? `<h3>outbox.json (preview of the first 2)</h3><div class="box mono">${esc(JSON.stringify(state.rows.slice(0, 2).map((r) => ({ id: r.id, team: r.team, language: r.language, draft: r.draft, status: "approved" })), null, 2))}</div>` : "";
+  return `${who("person")}
+    <h2>A person approves or returns the batch</h2>
+    <p>The export script refuses to run unless the audit passed and a person approved. There is no tool in this project that sends email. A person copies approved drafts into the real support system.</p>
+    <div class="banner ${pass ? "ok" : "bad"}">${pass ? "Audit passed, so the gate is open." : "Audit failed, so the gate is closed."}</div>
+    <div class="row"><button class="btn" id="approve" ${pass ? "" : "disabled"}>Approve batch</button><button class="btn ghost" id="return">Return for fixes</button></div>
+    ${body}${outbox}
+    <p class="sub">Tickets with needs_human true: ${state.rows.filter((r) => r.needs_human).map((r) => r.id).join(", ")}.</p>`;
+}
+const PANELS = { "01_intake": panelIntake, "02_classify": panelClassify, "03_route": panelRoute, "04_reply": panelReply, "05_audit": panelAudit };
+function render() {
+  renderTickets(); renderSteps();
+  $("panel").innerHTML = state.stage === "gate" ? panelGate() : PANELS[state.stage](row());
+  const ap = $("approve"); if (ap) ap.onclick = () => { state.approved = "approved"; render(); };
+  const rt = $("return"); if (rt) rt.onclick = () => { state.approved = "returned"; render(); };
+}
+
+function runAll() {
+  const cfg = state.data.config, table = state.data.routing, words = state.data.words;
+  const seen = new Set();
+  const counts = { intake: 0, classify: 0, route: 0, reply: 0 };
+  state.rows.forEach((r) => {
+    if (!T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at }, new Set())) counts.intake++;
+    if (!T.classificationProblems(r, cfg).length) counts.classify++;
+    if (r.team && table[r.category] === r.team) counts.route++;
+    if (!T.replyProblems(r, cfg, table, words).length) counts.reply++;
+  });
+  const a = auditResult();
+  const line = (label, n) => res(n === state.rows.length, `${label}: ${n} of ${state.rows.length} OK`);
+  $("batch").innerHTML = line("Intake", counts.intake) + line("Classify", counts.classify) + line("Route", counts.route) + line("Reply", counts.reply)
+    + `<div class="banner ${a.verdict === "PASS" ? "ok" : "bad"}">AUDIT ${a.verdict} ${a.passed_count}/${a.sample_size}</div>`
+    + (a.verdict === "FAIL" ? a.results.filter((x) => !x.passed).map((x) => `<p>${x.id} failed check ${x.failed_checks.join(", ")}. Fix stage: <strong>${[...new Set(x.failed_checks.map((c) => T.STAGE_FOR_CHECK[c]))].join(", ")}</strong></p>`).join("") : "");
+  if (state.stage === "05_audit" || state.stage === "gate") render();
+}
+function tamper() {
+  const a = T.audit(state.rows, state.data.config, state.data.routing, state.data.words);
+  const target = state.rows.find((r) => r.id === a.sampled_ids[0]);
+  if (state.tampered) return;
+  state.tampered = { id: target.id, team: target.team };
+  const wrong = Object.values(state.data.routing).find((t) => t !== target.team);
+  target.team = wrong;
+  $("batch").innerHTML = `<div class="banner warn">Changed the team of ${target.id} from "${esc(state.tampered.team)}" to "${esc(wrong)}", as if a bad edit slipped in. Now the audit runs again.</div>`;
+  const keep = $("batch").innerHTML;
+  runAll();
+  $("batch").innerHTML = keep + $("batch").innerHTML;
+  state.approved = null;
+  render();
+}
+function reset() {
+  state.rows = T.buildRows(state.data);
+  state.tampered = null; state.approved = null;
+  $("batch").innerHTML = ""; render();
+}
+
+// ---- Optional live mode: your own API key, called straight from this page ----
+async function callClaude(key, model, system, user) {
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: { "content-type": "application/json", "x-api-key": key, "anthropic-version": "2023-06-01", "anthropic-dangerous-direct-browser-access": "true" },
+    body: JSON.stringify({ model, max_tokens: 700, system, messages: [{ role: "user", content: user }] }),
+  });
+  const body = await response.json();
+  if (!response.ok) throw new Error((body.error && body.error.message) || "HTTP " + response.status);
+  return body.content.map((b) => b.text || "").join("");
+}
+function parseJson(text) {
+  const m = text.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("No JSON in the answer");
+  return JSON.parse(m[0]);
+}
+async function runLive() {
+  const key = $("apiKey").value.trim(), model = $("model").value.trim();
+  const r = row(), out = $("liveOut");
+  out.innerHTML = `<p class="sub">Calling Claude for ${r.id}...</p>`;
+  $("runLive").disabled = true;
+  try {
+    const d = T.detect(r.subject + " " + r.body, state.data.words);
+    const ticket = { id: r.id, subject: r.subject, body: r.body, received_at: r.received_at, language: d.language };
+    const cls = parseJson(await callClaude(key, model, state.data.skills["triage-ticket"], JSON.stringify(ticket)));
+    const clsProblems = T.classificationProblems(cls, state.data.config);
+    const routed = T.route(cls, state.data.routing);
+    let html = `<h3>Stage 2 (live)</h3><div class="box mono">${esc(JSON.stringify(cls, null, 2))}</div>` + (clsProblems.length ? clsProblems.map((p) => res(false, p)).join("") : res(true, "Classification passes the same check as the recorded run"));
+    if (!routed || clsProblems.length) {
+      out.innerHTML = html + `<div class="banner bad">Stopped. The script never guesses a team.</div>`;
+      return;
+    }
+    html += `<h3>Stage 3 (script)</h3>${res(true, "Routed to " + routed.team)}`;
+    const routedTicket = { ...ticket, category: cls.category, priority: cls.priority, team: routed.team, needs_human: cls.needs_human };
+    const rep = parseJson(await callClaude(key, model, state.data.skills["draft-reply"], JSON.stringify(routedTicket)));
+    const item = { ...routedTicket, draft: rep.draft, draft_language: rep.language, status: rep.status };
+    const problems = T.replyProblems(item, state.data.config, state.data.routing, state.data.words);
+    html += `<h3>Stage 4 (live draft)</h3><div class="box">${esc(rep.draft || "")}</div>` + (problems.length ? problems.map((p) => res(false, p)).join("") : res(true, "Draft passes every reply check"));
+    out.innerHTML = html + `<div class="banner warn">Live drafts are not audited into the recorded batch and are never sent.</div>`;
+  } catch (e) {
+    out.innerHTML = `<div class="banner bad">Live call failed: ${esc(e.message)}</div>`;
+  } finally {
+    $("runLive").disabled = $("apiKey").value.trim() === "";
+  }
+}
+
+async function init() {
+  const response = await fetch("data/run.json");
+  state.data = await response.json();
+  state.rows = T.buildRows(state.data);
+  $("tickets").onclick = (e) => { const b = e.target.closest("button[data-id]"); if (b) { state.selected = b.dataset.id; render(); } };
+  $("steps").onclick = (e) => { const b = e.target.closest("button[data-stage]"); if (b) { state.stage = b.dataset.stage; render(); } };
+  $("runAll").onclick = runAll; $("tamper").onclick = tamper; $("reset").onclick = reset;
+  $("apiKey").oninput = () => { $("runLive").disabled = $("apiKey").value.trim() === ""; };
+  $("runLive").onclick = runLive;
+  render();
+}
+init().catch((e) => { document.body.insertAdjacentHTML("afterbegin", `<p class="banner bad">Could not load data/run.json: ${esc(e.message)}. Open this page through a web server, not as a file.</p>`); });
+</script>
+</body>
+</html>

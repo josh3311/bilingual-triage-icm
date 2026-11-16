@@ -1,0 +1,12 @@
+{
+  "languages": ["EN", "FR"],
+  "categories": ["billing", "delivery", "account_access", "product_issue", "complaint", "other"],
+  "priorities": ["P1", "P2", "P3"],
+  "statuses": ["received", "rejected", "intake_ok", "classified", "routed", "waiting_for_approval", "approved", "returned"],
+  "banned_phrases": {
+    "EN": ["refund", "guarantee", "within 24 hours", "within 48 hours", "by tomorrow", "we promise", "compensation"],
+    "FR": ["remboursement garanti", "nous garantissons", "dans les 24 heures", "dans les 48 heures", "demain", "nous promettons", "compensation"]
+  },
+  "sample_size": 20,
+  "sample_seed": 42
+}

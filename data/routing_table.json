@@ -1,0 +1,8 @@
+{
+  "billing": "Billing Team",
+  "delivery": "Delivery Support",
+  "account_access": "Account Security",
+  "product_issue": "Technical Support",
+  "complaint": "Customer Care Lead",
+  "other": "General Support Queue"
+}

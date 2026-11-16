@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+runs/*/approval.json
+runs/*/outbox.json

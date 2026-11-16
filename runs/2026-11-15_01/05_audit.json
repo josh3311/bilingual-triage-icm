@@ -1,0 +1,131 @@
+{
+  "run_id": "2026-11-15_01",
+  "sample_size": 20,
+  "seed": 42,
+  "sampled_ids": [
+    "T016",
+    "T011",
+    "T003",
+    "T013",
+    "T028",
+    "T002",
+    "T018",
+    "T022",
+    "T012",
+    "T009",
+    "T027",
+    "T001",
+    "T023",
+    "T021",
+    "T008",
+    "T004",
+    "T006",
+    "T025",
+    "T017",
+    "T026"
+  ],
+  "results": [
+    {
+      "id": "T016",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T011",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T003",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T013",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T028",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T002",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T018",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T022",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T012",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T009",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T027",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T001",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T023",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T021",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T008",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T004",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T006",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T025",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T017",
+      "passed": true,
+      "failed_checks": []
+    },
+    {
+      "id": "T026",
+      "passed": true,
+      "failed_checks": []
+    }
+  ],
+  "passed_count": 20,
+  "verdict": "PASS"
+}

@@ -58,6 +58,20 @@ with sync_playwright() as p:
     check("intake panel shows language", "Language EN" in page.inner_text("#panel"))
     if SHOTS: page.screenshot(path=str(SHOTS / "1_intake.png"))
 
+    # Support desk
+    check("desk lists 30 tickets", page.locator("#deskList .trow").count() == 30)
+    page.click("#deskList .trow[data-d='T002']")
+    check("desk shows the French message and draft", "Mon colis" in page.inner_text("#deskDetail") and "Bonjour" in page.inner_text("#deskDetail"))
+    check("desk shows who did what", all(w in page.inner_text("#deskDetail") for w in ["Intake.", "Classify.", "Route.", "Reply.", "Audit.", "Approval."]))
+    page.click("#deskDetail button[data-act='approve']")
+    check("approving marks the ticket approved", "Approved" in page.inner_text("#deskList .trow[data-d='T002']") and "29 waiting" in page.inner_text("#deskStats").replace("\xa0", " "))
+    page.click("#deskFilters button[data-f='FR']")
+    check("French filter shows 15 tickets", page.locator("#deskList .trow").count() == 15)
+    page.click("#deskFilters button[data-f='human']")
+    check("needs a person filter shows 3 tickets", page.locator("#deskList .trow").count() == 3)
+    page.click("#deskFilters button[data-f='all']")
+    page.click("#heroTour")
+    check("hero button leads to the desk", page.is_visible("#desk"))
     # Guided tour
     check("tour offers a start button", page.is_visible("#tourStart"))
     page.click("#tourStart")
@@ -102,6 +116,7 @@ with sync_playwright() as p:
     if SHOTS: page.screenshot(path=str(SHOTS / "3_gate.png"))
 
     page.click("#tamper")
+    check("desk approve locks when the audit fails", page.is_disabled("#deskDetail button[data-act='approve']"))
     check("tamper makes audit FAIL", "AUDIT FAIL" in page.inner_text("#batch") and "03_route" in page.inner_text("#batch"))
     page.click("button[data-stage='gate']")
     check("approve disabled after tamper", page.is_disabled("#approve"))

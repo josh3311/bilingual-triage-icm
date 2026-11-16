@@ -41,7 +41,7 @@ code{font-family:var(--mono);font-size:.9em;background:#e4eff2;padding:1px 6px;b
 
 /* sections */
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.flow{padding-top:8px}
+.flow{padding-top:56px}
 .flowrow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
 @media (max-width:900px){.flowrow{grid-template-columns:repeat(2,1fr)}}
 .stage{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
@@ -109,6 +109,45 @@ label{font-size:13.5px;color:var(--mute);display:block;margin:10px 0 4px}
 .legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13.5px;color:var(--mute);margin-top:10px}
 .pulse{animation:pulse 1.4s ease-out 1}
 @keyframes pulse{from{box-shadow:0 0 0 0 rgba(15,111,143,.35)}to{box-shadow:0 0 0 14px rgba(15,111,143,0)}}
+
+/* demo support desk */
+.deskwrap{margin-top:-96px;position:relative;z-index:2}
+.desk{background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 30px 60px -28px rgba(10,34,57,.45),0 8px 20px -10px rgba(10,34,57,.18);overflow:hidden}
+.deskbar{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;padding:12px 18px;border-bottom:1px solid var(--line);background:#f8fbfc}
+.deskbar b{font:600 15px var(--display);margin-right:auto}
+.stat{font-size:13.5px;color:var(--mute)}.stat strong{color:var(--text);font-size:15px}
+.deskbody{display:grid;grid-template-columns:340px 1fr;min-height:560px}
+@media (max-width:900px){.deskbody{grid-template-columns:1fr}}
+.inbox{border-right:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+@media (max-width:900px){.inbox{border-right:0;border-bottom:1px solid var(--line)}}
+.filters{display:flex;flex-wrap:wrap;gap:6px;padding:12px 12px 8px}
+.filters button{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:999px;padding:4px 12px;font:600 13px var(--body);cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:#fff}
+.rows{overflow:auto;max-height:560px}
+@media (max-width:900px){.rows{max-height:280px}}
+.trow{display:block;width:100%;text-align:left;border:0;border-top:1px solid var(--line);background:none;color:inherit;padding:11px 14px;cursor:pointer;font:inherit}
+.trow:hover{background:#f1f8f9}
+.trow[aria-current=true]{background:var(--claude-bg);box-shadow:inset 3px 0 0 var(--blue)}
+.trow .l1{display:flex;gap:8px;align-items:center;font-size:14.5px;font-weight:600}
+.trow .l1 span.t{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.trow .l2{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px;font-size:12.5px;color:var(--mute);align-items:center}
+.pill{font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;background:#e3edf0;color:var(--mute)}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}.pill.bad{background:var(--bad-bg);color:var(--bad)}.pill.warn{background:var(--warn-bg);color:var(--warn)}.pill.claude{background:var(--claude-bg);color:var(--claude-ink)}
+.thread{padding:20px 24px;min-width:0}
+.thread h2{font-size:22px;margin:0 0 6px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.bubble{border:1px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;max-width:640px}
+.bubble small{display:block;color:var(--mute);margin-bottom:4px;font-size:13px}
+.draft{margin-top:16px;border:1.5px solid #8ec3d2;border-radius:14px;padding:14px 16px;background:linear-gradient(180deg,#eef8fa,#e6f3f6);max-width:640px}
+.draft small{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;color:var(--mute);margin-bottom:6px;font-size:13px}
+.draft p{margin:0;white-space:pre-wrap}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 4px}
+.trail{margin-top:20px;max-width:640px}
+.trail h3{margin:0 0 8px}
+.trail ol{list-style:none;margin:0;padding:0}
+.trail li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}
+.trail li button{all:unset;cursor:pointer;color:var(--blue);text-decoration:underline;font-size:13px}
+.deskcap{color:var(--mute);font-size:14px;margin:12px 4px 0}
 footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);font-size:14px}
 .sr{position:absolute;left:-9999px}
 @media (max-width:700px){.hero{padding-bottom:250px}.hero .waves{height:270px}}
@@ -122,14 +161,30 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
     <h1>An AI drafts the reply. Scripts check it. A person says OK.</h1>
     <p class="lead">A support workspace for English and French tickets. Claude sorts each ticket and drafts the reply in the customer's language. Scripts check every draft. A person approves. It can't send anything.</p>
     <div class="cta">
-      <button class="btn" id="heroTour">Start the 1 minute tour</button>
+      <button class="btn" id="heroTour">Open the demo support desk</button>
       <a class="btn ghost" href="https://github.com/josh3311/bilingual-triage-icm">Read the code on GitHub</a>
     </div>
     <span class="honest">A replay of one real Claude run. The checks run live in your browser.</span>
   </div></div>
 </header>
 
+
+<section class="wrap deskwrap" id="desk" aria-label="Demo support desk">
+  <div class="desk">
+    <div class="deskbar"><b>Support desk</b><span class="stat" id="deskStats"></span></div>
+    <div class="deskbody">
+      <div class="inbox">
+        <div class="filters" id="deskFilters" role="group" aria-label="Filter tickets"></div>
+        <div class="rows" id="deskList"></div>
+      </div>
+      <div class="thread" id="deskDetail" aria-live="polite"></div>
+    </div>
+  </div>
+  <p class="deskcap">A demo desk with 30 invented tickets. Every reply here is a draft waiting for a person. Pick a ticket, read the customer's message and the draft, then see what happened to it.</p>
+</section>
+
 <section class="wrap flow" aria-label="How a ticket travels">
+  <h2 style="margin-bottom:14px;font-size:22px">Behind every ticket, six steps</h2>
   <div class="flowrow">
     <div class="stage"><span class="who script">Script</span><b>Intake</b><span class="s">Rejects incomplete tickets. Tags English or French.</span></div>
     <div class="stage"><span class="who claude">Claude</span><b>Classify</b><span class="s">Picks a category and a priority.</span></div>
@@ -167,8 +222,8 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
 </section>
 
 <section class="wrap try" id="try">
-  <h2 class="big">Try it yourself</h2>
-  <p class="sub">Start the tour and the page clicks for you, or pick a ticket and look around.</p>
+  <h2 class="big">See how each ticket was handled</h2>
+  <p class="sub">Under the desk are five checked stages. Start the tour and the page clicks for you, or pick a ticket and look around.</p>
   <div class="card tour" id="tour" aria-live="polite"><div id="tourBody"></div></div>
   <main>
     <aside class="card list" aria-label="Tickets"><div class="label" style="padding:6px 8px 2px"><span class="n">1</span>Pick a ticket</div><p class="hint" style="padding:0 8px;margin:0 0 6px">Odd numbers are English, even are French.</p><div id="tickets"></div></aside>
@@ -220,7 +275,7 @@ const STAGES = [
   { key: "05_audit", name: "5 Audit", sub: "script" },
   { key: "gate", name: "6 Approval", sub: "a person" },
 ];
-const state = { data: null, rows: [], selected: "T001", stage: "01_intake", tampered: null, approved: null };
+const state = { data: null, rows: [], selected: "T001", stage: "01_intake", tampered: null, approved: null, decisions: {}, filter: "all" };
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const row = () => state.rows.find((r) => r.id === state.selected);
@@ -329,10 +384,10 @@ function panelGate() {
 }
 const PANELS = { "01_intake": panelIntake, "02_classify": panelClassify, "03_route": panelRoute, "04_reply": panelReply, "05_audit": panelAudit };
 function render() {
-  renderTickets(); renderSteps();
+  renderTickets(); renderSteps(); renderDesk();
   $("panel").innerHTML = state.stage === "gate" ? panelGate() : PANELS[state.stage](row());
-  const ap = $("approve"); if (ap) ap.onclick = () => { state.approved = "approved"; render(); };
-  const rt = $("return"); if (rt) rt.onclick = () => { state.approved = "returned"; render(); };
+  const ap = $("approve"); if (ap) ap.onclick = () => { state.approved = "approved"; state.rows.forEach((r) => (state.decisions[r.id] = "approved")); render(); };
+  const rt = $("return"); if (rt) rt.onclick = () => { state.approved = "returned"; state.rows.forEach((r) => (state.decisions[r.id] = "returned")); render(); };
 }
 
 function runAll() {
@@ -363,12 +418,12 @@ function tamper() {
   const keep = $("batch").innerHTML;
   runAll();
   $("batch").innerHTML = keep + $("batch").innerHTML;
-  state.approved = null;
+  state.approved = null; state.decisions = {};
   render();
 }
 function reset() {
   state.rows = T.buildRows(state.data);
-  state.tampered = null; state.approved = null;
+  state.tampered = null; state.approved = null; state.decisions = {};
   $("batch").innerHTML = ""; render();
 }
 
@@ -469,13 +524,72 @@ function tourGo(i) {
   $("tour").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+
+// ---- Demo support desk: looks and works like a small ticket system ----
+const FILTERS = [["all", "All"], ["human", "Needs a person"], ["p1", "Urgent"], ["EN", "English"], ["FR", "French"]];
+function deskVisible() {
+  return state.rows.filter((r) => state.filter === "all" || (state.filter === "human" && r.needs_human) || (state.filter === "p1" && r.priority === "P1") || state.filter === r.language);
+}
+function deskStatus(r) {
+  const d = state.decisions[r.id];
+  return d === "approved" ? ["Approved", "ok"] : d === "returned" ? ["Returned", "bad"] : ["Waiting for approval", "warn"];
+}
+function renderDesk() {
+  if (!state.data) return;
+  const a = auditResult();
+  const waiting = state.rows.filter((r) => !state.decisions[r.id]).length;
+  $("deskStats").innerHTML = `<strong>${state.rows.length}</strong> tickets &nbsp; <strong>${waiting}</strong> waiting for approval &nbsp; <strong>${state.rows.filter((r) => r.needs_human).length}</strong> need a person &nbsp; audit <strong>${a.verdict} ${a.passed_count}/${a.sample_size}</strong>`;
+  $("deskFilters").innerHTML = FILTERS.map(([k, label]) => `<button data-f="${k}" aria-pressed="${state.filter === k}">${label}</button>`).join("");
+  $("deskList").innerHTML = deskVisible().map((r) => {
+    const [st, kind] = deskStatus(r);
+    return `<button class="trow" data-d="${r.id}" aria-current="${r.id === state.selected}">
+      <div class="l1"><span class="t">${esc(r.subject)}</span><span class="pill ${r.priority === "P1" ? "bad" : ""}">${r.priority}</span></div>
+      <div class="l2"><span class="pill">${r.language}</span><span>${esc(r.team || "")}</span>${r.needs_human ? '<span class="pill warn">Needs a person</span>' : ""}<span class="pill ${kind}">${st}</span></div></button>`;
+  }).join("");
+  const r = row();
+  if (!r) return;
+  const [st, kind] = deskStatus(r);
+  const problems = T.replyProblems(r, state.data.config, state.data.routing, state.data.words);
+  const inSample = a.sampled_ids.includes(r.id);
+  const gateOpen = a.verdict === "PASS";
+  const checks = ["3 to 5 sentences", "Right language", "No promises", "No team names", "Marked as a draft"];
+  const trail = [
+    ["Script", "script", "Intake", `Ticket is complete. Language ${r.language}, confidence ${r.confidence}.`, "01_intake"],
+    ["Claude", "claude", "Classify", `${r.category}, ${r.priority}. ${r.reason}`, "02_classify"],
+    ["Script", "script", "Route", `Sent to ${r.team}${r.urgent ? " as urgent" : ""}.`, "03_route"],
+    ["Claude", "claude", "Reply", problems.length ? "Draft failed a check." : "Draft written and passed every reply check.", "04_reply"],
+    ["Script", "script", "Audit", inSample ? `This ticket is in the audit sample. Batch audit ${a.verdict}.` : `Not in the sample of 20. Batch audit ${a.verdict}.`, "05_audit"],
+    ["A person", "person", "Approval", st + ".", "gate"],
+  ];
+  $("deskDetail").innerHTML = `
+    <h2>${esc(r.subject)}</h2>
+    <div class="meta"><span class="pill">${r.id}</span><span class="pill">${r.language === "FR" ? "French" : "English"}</span><span class="pill claude">${esc(r.category.replace("_", " "))}</span><span class="pill ${r.priority === "P1" ? "bad" : ""}">${r.priority}${r.priority === "P1" ? " urgent" : ""}</span><span class="pill">${esc(r.team)}</span>${r.needs_human ? '<span class="pill warn">Needs a person</span>' : ""}<span class="pill ${kind}">${st}</span></div>
+    <div class="bubble"><small>Customer message, received ${r.received_at}</small>${esc(r.body)}</div>
+    <div class="draft"><small><span class="pill claude">Draft by Claude</span><span>in ${r.language === "FR" ? "French" : "English"}. Not sent.</span></small><p>${esc(r.draft)}</p>
+      <div class="chips">${checks.map((c) => `<span class="pill ${problems.length ? "bad" : "ok"}">${problems.length ? "" : "✓ "}${c}</span>`).join("")}</div>
+      <div class="row"><button class="btn" data-act="approve" ${gateOpen ? "" : "disabled"}>Approve this reply</button><button class="btn ghost" data-act="return">Return for changes</button></div>
+      ${gateOpen ? "" : '<p class="hint" style="margin:0">Approval is locked because the audit failed. Fix the stage it names.</p>'}</div>
+    <div class="trail"><h3>What happened to this ticket</h3><ol>${trail.map(([who, kind2, name, text, stage]) => `<li><span><span class="who ${kind2}" style="margin:0">${who}</span></span><span><strong>${name}.</strong> ${esc(text)} <button data-stage-go="${stage}">See the rules</button></span></li>`).join("")}</ol></div>`;
+}
+function deskInit() {
+  $("deskFilters").onclick = (e) => { const b = e.target.closest("button[data-f]"); if (b) { state.filter = b.dataset.f; const v = deskVisible(); if (v.length && !v.find((x) => x.id === state.selected)) state.selected = v[0].id; render(); } };
+  $("deskList").onclick = (e) => { const b = e.target.closest("button[data-d]"); if (b) { state.selected = b.dataset.d; render(); } };
+  $("deskDetail").onclick = (e) => {
+    const act = e.target.closest("button[data-act]");
+    if (act && !act.disabled) { state.decisions[state.selected] = act.dataset.act === "approve" ? "approved" : "returned"; render(); return; }
+    const go = e.target.closest("button[data-stage-go]");
+    if (go) { state.stage = go.dataset.stageGo; render(); $("try").scrollIntoView({ behavior: "smooth", block: "start" }); }
+  };
+}
+
 async function init() {
   const response = await fetch("data/run.json");
   state.data = await response.json();
   state.rows = T.buildRows(state.data);
   $("tickets").onclick = (e) => { const b = e.target.closest("button[data-id]"); if (b) { state.selected = b.dataset.id; render(); } };
   $("steps").onclick = (e) => { const b = e.target.closest("button[data-stage]"); if (b) { state.stage = b.dataset.stage; render(); } };
-  $("heroTour").onclick = () => { $("tour").style.display = ""; tourGo(0); $("tour").scrollIntoView({ behavior: "smooth", block: "start" }); };
+  deskInit();
+  $("heroTour").onclick = () => { $("desk").scrollIntoView({ behavior: "smooth", block: "start" }); };
   $("runAll").onclick = runAll; $("tamper").onclick = tamper; $("reset").onclick = reset;
   $("apiKey").oninput = () => { $("runLive").disabled = $("apiKey").value.trim() === ""; };
   $("runLive").onclick = runLive;

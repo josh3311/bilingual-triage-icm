@@ -60,6 +60,17 @@ label{font-size:13px;color:var(--mute);display:block;margin:8px 0 4px}
 footer{max-width:1180px;margin:0 auto;padding:0 20px 40px;color:var(--mute);font-size:13px}
 a{color:var(--accent)}
 .sr{position:absolute;left:-9999px}
+.tour{border:2px solid var(--accent);background:var(--card);margin-bottom:16px}
+.tour h2{margin-bottom:4px}
+.tour .count{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.tour .what{margin:8px 0;padding:10px 12px;border-radius:10px;background:var(--accent-bg)}
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px;color:var(--mute);margin-top:10px}
+.label{display:flex;gap:8px;align-items:center;font-weight:700;font-size:15px;margin:0 0 8px}
+.label .n{flex:none;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-size:13px}
+.hint{color:var(--mute);font-size:13.5px;margin:-4px 0 10px}
+.pulse{animation:pulse 1.6s ease-in-out 3}
+@keyframes pulse{50%{box-shadow:0 0 0 5px var(--accent-bg),0 0 0 7px var(--accent)}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none;outline:3px solid var(--accent)}}
 </style>
 </head>
 <body>
@@ -75,17 +86,22 @@ a{color:var(--accent)}
 </header>
 
 <main>
-  <aside class="card list" aria-label="Tickets"><div id="tickets"></div></aside>
+  <aside class="card list" aria-label="Tickets"><div class="label" style="padding:6px 8px 2px"><span class="n">1</span>Pick a ticket</div><p class="hint" style="padding:0 8px;margin:0 0 6px">T002 is French. Odd numbers are English, even are French.</p><div id="tickets"></div></aside>
 
   <section>
+    <div class="card tour" id="tour" aria-live="polite">
+      <div id="tourBody"></div>
+    </div>
     <div class="card">
+      <div class="label"><span class="n">2</span>Follow it through the stages</div>
+      <p class="hint">Click a stage button to see what happens there and who does it. Green is a script, blue is Claude, yellow is a person.</p>
       <div class="steps" id="steps" role="tablist" aria-label="Stages"></div>
       <div id="panel" role="tabpanel"></div>
     </div>
 
     <div class="card" style="margin-top:16px">
-      <h2>Check the whole batch</h2>
-      <p class="sub">Runs the same checks on all 30 tickets, then audits a fixed sample of 20 (seed 42).</p>
+      <div class="label"><span class="n">3</span>Check all 30 tickets, then try to break it</div>
+      <p class="hint">Press <strong>Run all checks</strong> first (it should pass). Then press <strong>Try to break it</strong> to watch the audit catch a bad edit. <strong>Reset</strong> undoes it.</p>
       <div class="row">
         <button class="btn" id="runAll">Run all checks</button>
         <button class="btn ghost" id="tamper">Try to break it</button>
@@ -95,7 +111,7 @@ a{color:var(--accent)}
     </div>
 
     <details id="live">
-      <summary>Optional: try it live with your own Anthropic API key</summary>
+      <summary><span class="n" style="display:inline-grid;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;place-items:center;font-size:12px;margin-right:6px">4</span>Optional: try it live with your own Anthropic API key</summary>
       <p class="sub" style="margin-top:8px">Off by default. The key stays in this page's memory, goes only to api.anthropic.com, and is never saved. Calls are billed to your own account. Anyone can use the recorded run above without a key.</p>
       <label for="apiKey">API key</label>
       <input id="apiKey" type="password" autocomplete="off" placeholder="sk-ant-...">
@@ -321,6 +337,57 @@ async function runLive() {
   }
 }
 
+
+// ---- Guided tour: Next does the clicking and explains what you are looking at ----
+const TOUR = [
+  { ticket: "T002", stage: "01_intake", title: "Meet a ticket", what: "This is ticket T002, written in French. Stage 1 is a script. It checks the ticket is complete and counts French and English words to tag the language. Look at the green check marks: no AI was used here.", click: "Next opens the Classify stage." },
+  { ticket: "T002", stage: "02_classify", title: "Claude reads and decides", what: "Now Claude reads the ticket and picks one of 6 categories and one of 3 priorities. This answer was recorded from a real Claude run. A script then checks the answer is an allowed value, so Claude never grades its own work.", click: "Next opens the Route stage." },
+  { ticket: "T002", stage: "03_route", title: "A script picks the team", what: "No AI here. A lookup table gives exactly one team per category, so one ticket never lands on two desks. The bold row in the table is the match.", click: "Next opens the Reply stage." },
+  { ticket: "T002", stage: "04_reply", title: "Claude drafts a reply in French", what: "Claude writes a short reply in the ticket's own language. A script checks it is 3 to 5 sentences, in the right language, with no promises like refunds or deadlines. This is only a draft. Nothing is sent.", click: "Next runs the audit on all 30 tickets." },
+  { ticket: "T002", stage: "05_audit", title: "The audit checks 20 tickets", what: "A script picks 20 tickets with a fixed seed and runs 7 checks on each. It should say AUDIT PASS 20/20. Scroll down: the batch box under number 3 shows the same result.", click: "Next breaks one ticket on purpose.", action: "runAll" },
+  { ticket: "T002", stage: "05_audit", title: "Now watch it catch a mistake", what: "I just changed one ticket's team to a wrong one, as if a bad edit slipped in. The audit now says FAIL and names the stage to fix (03_route). That is the point of the project: a failure points at one stage.", click: "Next shows the approval gate.", action: "tamper" },
+  { ticket: "T002", stage: "gate", title: "A person has the last word", what: "The Approve button is locked because the audit failed. After the fix (Reset) it opens, and a person clicks Approve. Even then, nothing is sent. The project has no sending tool at all.", click: "Next fixes the break and opens the gate.", action: "tamperGate" },
+  { ticket: "T002", stage: "gate", title: "That is the whole flow", what: "The gate is open again after the fix. Now explore on your own: pick any ticket in list 1, click any stage in 2, or use 4 to run a ticket live with your own API key. Everything you saw uses scripts for checking and a person for approval.", click: "You can restart the tour any time.", action: "fixed" },
+];
+const tour = { i: -1 };
+function tourRender() {
+  const box = $("tourBody");
+  if (tour.i < 0) {
+    box.innerHTML = `<div class="count">Start here</div><h2>New here? Take the 1 minute guided tour</h2>
+      <p>This page shows how a support ticket is handled in five checked stages. The tour clicks for you and explains each step. You can also skip it and click around.</p>
+      <div class="row"><button class="btn" id="tourStart">Start the tour</button><button class="btn ghost" id="tourSkip">Skip, I will explore</button></div>
+      <div class="legend"><span class="who script">Script</span> counts and checks, no AI <span class="who claude">Claude skill</span> reads and writes, recorded <span class="who person">A person</span> approves</div>`;
+    $("tourStart").onclick = () => tourGo(0);
+    $("tourSkip").onclick = () => { $("tour").style.display = "none"; };
+    return;
+  }
+  const t = TOUR[tour.i], last = tour.i === TOUR.length - 1;
+  box.innerHTML = `<div class="count">Step ${tour.i + 1} of ${TOUR.length}</div><h2>${esc(t.title)}</h2>
+    <div class="what">${esc(t.what)}</div>
+    <div class="row"><button class="btn ghost" id="tourBack" ${tour.i === 0 ? "disabled" : ""}>Back</button>
+    <button class="btn" id="tourNext">${last ? "Restart the tour" : "Next"}</button>
+    <button class="btn ghost" id="tourEnd">Close tour</button></div>
+    <p class="hint" style="margin:0">${esc(t.click)}</p>`;
+  $("tourBack").onclick = () => tourGo(tour.i - 1);
+  $("tourNext").onclick = () => tourGo(last ? 0 : tour.i + 1);
+  $("tourEnd").onclick = () => { tour.i = -1; $("tour").style.display = "none"; };
+}
+function tourGo(i) {
+  tour.i = i;
+  const t = TOUR[i];
+  // Start every step from a clean state, then replay the actions needed to reach it.
+  reset();
+  state.selected = t.ticket; state.stage = t.stage;
+  if (["runAll", "tamper", "tamperGate", "fixed"].includes(t.action) || i >= 4) { runAll(); }
+  if (t.action === "tamper" || t.action === "tamperGate") { tamper(); }
+  if (t.action === "fixed") { reset(); runAll(); }
+  state.stage = t.stage; state.selected = t.ticket;
+  render(); tourRender();
+  const target = t.stage === "05_audit" || t.stage === "gate" ? $("panel") : $("panel");
+  target.classList.remove("pulse"); void target.offsetWidth; target.classList.add("pulse");
+  $("steps").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
 async function init() {
   const response = await fetch("data/run.json");
   state.data = await response.json();
@@ -330,7 +397,7 @@ async function init() {
   $("runAll").onclick = runAll; $("tamper").onclick = tamper; $("reset").onclick = reset;
   $("apiKey").oninput = () => { $("runLive").disabled = $("apiKey").value.trim() === ""; };
   $("runLive").onclick = runLive;
-  render();
+  render(); tourRender();
 }
 init().catch((e) => { document.body.insertAdjacentHTML("afterbegin", `<p class="banner bad">Could not load data/run.json: ${esc(e.message)}. Open this page through a web server, not as a file.</p>`); });
 </script>

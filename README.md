@@ -49,7 +49,7 @@ Every stage folder has a `CONTEXT.md` with the same seven sections: task, inputs
 
 The website replays one **recorded Claude run**: the classifications and the drafts in `runs/2026-11-15_01/` were written by Claude following the two skills in `skills/`. The checks are not recorded. The language tagging, validation, routing, reply checks and the audit run **live in your browser** from `docs/triage.js`, a JavaScript copy of the Python scripts. A test proves the two give the same answers.
 
-Try the **Try to break it** button. It changes one ticket's team and the audit fails and points at `03_route`.
+Press **Start the tour** on the page for a one minute guided walk through the flow. Or try the **Try to break it** button. It changes one ticket's team and the audit fails and points at `03_route`.
 
 There is also an optional panel to run one ticket live with **your own Anthropic API key**. It is off by default, the key stays in memory only, calls go straight from your browser to `api.anthropic.com`, and you pay for them yourself. Visitors never need it. Because it calls the API from the browser, treat any key you paste there as something you may want to rotate afterwards.
 

@@ -40,4 +40,4 @@ The table (master copy is `data/routing_table.json`):
 - MUST NOT change `category` or `priority`. If they look wrong, report it. Fixing them belongs to stage 2.
 
 ## 7. Next stage
-`04_reply`. Hand over `runs/<run_id>/03_route.json`.
+`04_lookup`. Hand over `runs/<run_id>/03_route.json`.

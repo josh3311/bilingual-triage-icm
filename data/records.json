@@ -1,0 +1,712 @@
+{
+  "note": "Synthetic records. No real customers.",
+  "customers": [
+    {
+      "id": "C001",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C002",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C003",
+      "language": "EN",
+      "account_status": "locked",
+      "locked_since": "2026-11-02",
+      "failed_logins": 5
+    },
+    {
+      "id": "C004",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C005",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C006",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C007",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C008",
+      "language": "FR",
+      "account_status": "locked",
+      "locked_since": "2026-11-05",
+      "failed_logins": 5
+    },
+    {
+      "id": "C009",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C010",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C011",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C012",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C013",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C014",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C015",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C016",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C017",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C018",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C019",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C020",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C021",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C022",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C023",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C024",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C025",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C027",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C028",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C029",
+      "language": "EN",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    },
+    {
+      "id": "C030",
+      "language": "FR",
+      "account_status": "active",
+      "locked_since": null,
+      "failed_logins": 0
+    }
+  ],
+  "orders": [
+    {
+      "id": 5521,
+      "customer_id": "C001",
+      "placed_at": "2026-10-30",
+      "total": 64.5,
+      "status": "shipped",
+      "shipped_at": "2026-10-31",
+      "carrier": "Northline",
+      "tracking_status": "in_transit",
+      "tracking_last_update": "2026-11-01",
+      "expected_at": "2026-11-04"
+    },
+    {
+      "id": 7340,
+      "customer_id": "C002",
+      "placed_at": "2026-10-28",
+      "total": 89.0,
+      "status": "shipped",
+      "shipped_at": "2026-10-30",
+      "carrier": "Northline",
+      "tracking_status": "in_transit",
+      "tracking_last_update": "2026-11-01",
+      "expected_at": "2026-11-03"
+    },
+    {
+      "id": 6650,
+      "customer_id": "C004",
+      "placed_at": "2026-11-02",
+      "total": 54.0,
+      "status": "delivered",
+      "shipped_at": "2026-11-02",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-03",
+      "expected_at": "2026-11-04"
+    },
+    {
+      "id": 7011,
+      "customer_id": "C005",
+      "placed_at": "2026-10-18",
+      "total": 142.0,
+      "status": "shipped",
+      "shipped_at": "2026-10-20",
+      "carrier": "Northline",
+      "tracking_status": "no_update",
+      "tracking_last_update": "2026-10-24",
+      "expected_at": "2026-10-27"
+    },
+    {
+      "id": 7120,
+      "customer_id": "C006",
+      "placed_at": "2026-10-30",
+      "total": 189.0,
+      "status": "delivered",
+      "shipped_at": "2026-11-01",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-03",
+      "expected_at": "2026-11-04"
+    },
+    {
+      "id": 7203,
+      "customer_id": "C009",
+      "placed_at": "2026-11-02",
+      "total": 249.0,
+      "status": "delivered",
+      "shipped_at": "2026-11-03",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-05",
+      "expected_at": "2026-11-06"
+    },
+    {
+      "id": 7388,
+      "customer_id": "C012",
+      "placed_at": "2026-11-03",
+      "total": 73.4,
+      "status": "delivered",
+      "shipped_at": "2026-11-04",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-07",
+      "expected_at": "2026-11-07"
+    },
+    {
+      "id": 6409,
+      "customer_id": "C013",
+      "placed_at": "2026-11-01",
+      "total": 120.0,
+      "status": "delivered",
+      "shipped_at": "2026-11-02",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-05",
+      "expected_at": "2026-11-06"
+    },
+    {
+      "id": 6107,
+      "customer_id": "C015",
+      "placed_at": "2026-11-08",
+      "total": 75.2,
+      "status": "processing",
+      "shipped_at": null,
+      "carrier": null,
+      "tracking_status": "none",
+      "tracking_last_update": null,
+      "expected_at": "2026-11-13"
+    },
+    {
+      "id": 8812,
+      "customer_id": "C016",
+      "placed_at": "2026-11-01",
+      "total": 112.3,
+      "status": "shipped",
+      "shipped_at": "2026-11-02",
+      "carrier": "Northline",
+      "tracking_status": "in_transit",
+      "tracking_last_update": "2026-11-05",
+      "expected_at": "2026-11-08"
+    },
+    {
+      "id": 7455,
+      "customer_id": "C017",
+      "placed_at": "2026-11-02",
+      "total": 96.0,
+      "status": "shipped",
+      "shipped_at": "2026-11-04",
+      "carrier": "Northline",
+      "tracking_status": "in_transit",
+      "tracking_last_update": "2026-11-06",
+      "expected_at": "2026-11-09"
+    },
+    {
+      "id": 7512,
+      "customer_id": "C023",
+      "placed_at": "2026-11-03",
+      "total": 58.9,
+      "status": "shipped",
+      "shipped_at": "2026-11-05",
+      "carrier": "Northline",
+      "tracking_status": "no_update",
+      "tracking_last_update": "2026-11-09",
+      "expected_at": "2026-11-09"
+    },
+    {
+      "id": 7030,
+      "customer_id": "C025",
+      "placed_at": "2026-10-25",
+      "total": 39.99,
+      "status": "delivered",
+      "shipped_at": "2026-10-26",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-10-29",
+      "expected_at": "2026-10-30"
+    },
+    {
+      "id": 7101,
+      "customer_id": "C028",
+      "placed_at": "2026-10-26",
+      "total": 134.5,
+      "status": "shipped",
+      "shipped_at": "2026-10-28",
+      "carrier": "Northline",
+      "tracking_status": "no_update",
+      "tracking_last_update": "2026-11-02",
+      "expected_at": "2026-11-04"
+    },
+    {
+      "id": 6520,
+      "customer_id": "C030",
+      "placed_at": "2026-11-03",
+      "total": 47.0,
+      "status": "delivered",
+      "shipped_at": "2026-11-04",
+      "carrier": "Northline",
+      "tracking_status": "delivered",
+      "tracking_last_update": "2026-11-06",
+      "expected_at": "2026-11-07"
+    }
+  ],
+  "charges": [
+    {
+      "id": "CH01",
+      "order_id": 5521,
+      "customer_id": "C001",
+      "amount": 64.5,
+      "charged_at": "2026-11-01",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH02",
+      "order_id": 5521,
+      "customer_id": "C001",
+      "amount": 64.5,
+      "charged_at": "2026-11-01",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH03",
+      "order_id": 7340,
+      "customer_id": "C002",
+      "amount": 89.0,
+      "charged_at": "2026-10-28",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH04",
+      "order_id": 6650,
+      "customer_id": "C004",
+      "amount": 54.0,
+      "charged_at": "2026-11-02",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH05",
+      "order_id": 6650,
+      "customer_id": "C004",
+      "amount": 6.5,
+      "charged_at": "2026-11-02",
+      "kind": "service_fee",
+      "description": "Frais de service"
+    },
+    {
+      "id": "CH06",
+      "order_id": 6409,
+      "customer_id": "C013",
+      "amount": 120.0,
+      "charged_at": "2026-11-01",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH07",
+      "order_id": 6409,
+      "customer_id": "C013",
+      "amount": 14.99,
+      "charged_at": "2026-11-03",
+      "kind": "service_fee",
+      "description": "Express handling fee"
+    },
+    {
+      "id": "CH08",
+      "order_id": 8812,
+      "customer_id": "C016",
+      "amount": 112.3,
+      "charged_at": "2026-11-03",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH09",
+      "order_id": 8812,
+      "customer_id": "C016",
+      "amount": 112.3,
+      "charged_at": "2026-11-03",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH10",
+      "order_id": 7030,
+      "customer_id": "C025",
+      "amount": 39.99,
+      "charged_at": "2026-10-25",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH11",
+      "order_id": 6520,
+      "customer_id": "C030",
+      "amount": 47.0,
+      "charged_at": "2026-11-03",
+      "kind": "payment",
+      "description": "Order payment"
+    },
+    {
+      "id": "CH12",
+      "order_id": 6520,
+      "customer_id": "C030",
+      "amount": 14.99,
+      "charged_at": "2026-11-05",
+      "kind": "service_fee",
+      "description": "Frais de traitement accéléré"
+    }
+  ],
+  "policies": [
+    {
+      "id": "P_late_delivery_EN",
+      "topic": "late_delivery",
+      "language": "EN",
+      "title": "Late or missing package",
+      "body": "Tracking updates can take up to 2 business days to appear. If a package has not arrived 14 days after it shipped, the team opens a trace request with the carrier."
+    },
+    {
+      "id": "P_late_delivery_FR",
+      "topic": "late_delivery",
+      "language": "FR",
+      "title": "Colis en retard ou introuvable",
+      "body": "Les mises à jour du suivi peuvent prendre jusqu'à 2 jours ouvrables. Si un colis n'est pas arrivé 14 jours après son expédition, l'équipe ouvre une demande de recherche auprès du transporteur."
+    },
+    {
+      "id": "P_double_charge_EN",
+      "topic": "double_charge",
+      "language": "EN",
+      "title": "Charged twice for one order",
+      "body": "A second charge on the same order is reviewed by the team, who compare the charge records. A pending charge can take 3 business days to clear."
+    },
+    {
+      "id": "P_double_charge_FR",
+      "topic": "double_charge",
+      "language": "FR",
+      "title": "Débité deux fois pour une commande",
+      "body": "Un second prélèvement sur la même commande est examiné par l'équipe, qui compare les relevés. Un prélèvement en attente peut prendre 3 jours ouvrables à disparaître."
+    },
+    {
+      "id": "P_billing_line_EN",
+      "topic": "billing_line",
+      "language": "EN",
+      "title": "Questions about an invoice line",
+      "body": "An invoice can include a service fee. The team explains each line on an invoice on request."
+    },
+    {
+      "id": "P_billing_line_FR",
+      "topic": "billing_line",
+      "language": "FR",
+      "title": "Questions sur une ligne de facture",
+      "body": "Une facture peut comprendre des frais de service. L'équipe explique chaque ligne d'une facture sur demande."
+    },
+    {
+      "id": "P_locked_account_EN",
+      "topic": "locked_account",
+      "language": "EN",
+      "title": "Locked account",
+      "body": "An account is locked after 5 failed login attempts. The team confirms who you are before unlocking it."
+    },
+    {
+      "id": "P_locked_account_FR",
+      "topic": "locked_account",
+      "language": "FR",
+      "title": "Compte bloqué",
+      "body": "Un compte est bloqué après 5 tentatives de connexion échouées. L'équipe confirme votre identité avant de le débloquer."
+    },
+    {
+      "id": "P_password_reset_EN",
+      "topic": "password_reset",
+      "language": "EN",
+      "title": "Password reset email",
+      "body": "The reset email goes to the address on the account. If it has not arrived after 10 minutes, check the spam folder."
+    },
+    {
+      "id": "P_password_reset_FR",
+      "topic": "password_reset",
+      "language": "FR",
+      "title": "Courriel de réinitialisation du mot de passe",
+      "body": "Le courriel de réinitialisation est envoyé à l'adresse du compte. S'il n'est pas arrivé après 10 minutes, vérifiez le dossier des courriels indésirables."
+    },
+    {
+      "id": "P_address_change_EN",
+      "topic": "address_change",
+      "language": "EN",
+      "title": "Changing a delivery address",
+      "body": "A delivery address can be changed only before an order ships. After it ships, the carrier handles any redirection."
+    },
+    {
+      "id": "P_address_change_FR",
+      "topic": "address_change",
+      "language": "FR",
+      "title": "Modifier une adresse de livraison",
+      "body": "Une adresse de livraison ne peut être modifiée qu'avant l'expédition de la commande. Après l'expédition, le transporteur s'occupe de toute redirection."
+    },
+    {
+      "id": "P_email_change_EN",
+      "topic": "email_change",
+      "language": "EN",
+      "title": "Changing the account email",
+      "body": "The email address on an account is changed in the account settings after the team confirms your identity."
+    },
+    {
+      "id": "P_email_change_FR",
+      "topic": "email_change",
+      "language": "FR",
+      "title": "Changer le courriel du compte",
+      "body": "L'adresse courriel d'un compte se change dans les paramètres du compte, après que l'équipe a confirmé votre identité."
+    },
+    {
+      "id": "P_receipt_EN",
+      "topic": "receipt",
+      "language": "EN",
+      "title": "Receipt copies",
+      "body": "A copy of the receipt is available for any paid order on request."
+    },
+    {
+      "id": "P_receipt_FR",
+      "topic": "receipt",
+      "language": "FR",
+      "title": "Copies de reçu",
+      "body": "Une copie du reçu est disponible sur demande pour toute commande payée."
+    },
+    {
+      "id": "P_holiday_hours_EN",
+      "topic": "holiday_hours",
+      "language": "EN",
+      "title": "Holiday hours",
+      "body": "Support is closed on December 25 and January 1. On December 24 and 31, support is open from 9 to 14."
+    },
+    {
+      "id": "P_holiday_hours_FR",
+      "topic": "holiday_hours",
+      "language": "FR",
+      "title": "Heures des fêtes",
+      "body": "Le soutien est fermé le 25 décembre et le 1er janvier. Les 24 et 31 décembre, le soutien est ouvert de 9 h à 14 h."
+    },
+    {
+      "id": "P_sunday_delivery_EN",
+      "topic": "sunday_delivery",
+      "language": "EN",
+      "title": "Sunday delivery",
+      "body": "Deliveries are made Monday to Saturday. There are no Sunday deliveries."
+    },
+    {
+      "id": "P_sunday_delivery_FR",
+      "topic": "sunday_delivery",
+      "language": "FR",
+      "title": "Livraison le dimanche",
+      "body": "Les livraisons ont lieu du lundi au samedi. Il n'y a pas de livraison le dimanche."
+    },
+    {
+      "id": "P_return_policy_EN",
+      "topic": "return_policy",
+      "language": "EN",
+      "title": "Returns",
+      "body": "Items can be returned within 30 days of delivery. The team reviews each return request."
+    },
+    {
+      "id": "P_return_policy_FR",
+      "topic": "return_policy",
+      "language": "FR",
+      "title": "Retours",
+      "body": "Les articles peuvent être retournés dans les 30 jours suivant la livraison. L'équipe examine chaque demande de retour."
+    },
+    {
+      "id": "P_product_defect_EN",
+      "topic": "product_defect",
+      "language": "EN",
+      "title": "Damaged or faulty items",
+      "body": "An item that arrives damaged or does not work is reviewed by the team, who may ask for photos."
+    },
+    {
+      "id": "P_product_defect_FR",
+      "topic": "product_defect",
+      "language": "FR",
+      "title": "Article endommagé ou défectueux",
+      "body": "Un article qui arrive endommagé ou qui ne fonctionne pas est examiné par l'équipe, qui peut demander des photos."
+    },
+    {
+      "id": "P_app_issue_EN",
+      "topic": "app_issue",
+      "language": "EN",
+      "title": "App problems",
+      "body": "App problems are reviewed by technical support, who may ask for the app version and the device model."
+    },
+    {
+      "id": "P_app_issue_FR",
+      "topic": "app_issue",
+      "language": "FR",
+      "title": "Problèmes avec l'application",
+      "body": "Les problèmes d'application sont examinés par le soutien technique, qui peut demander la version de l'application et le modèle de l'appareil."
+    },
+    {
+      "id": "P_complaint_EN",
+      "topic": "complaint",
+      "language": "EN",
+      "title": "Service complaints",
+      "body": "A service complaint is reviewed by a team lead, who may listen to the call record."
+    },
+    {
+      "id": "P_complaint_FR",
+      "topic": "complaint",
+      "language": "FR",
+      "title": "Plaintes sur le service",
+      "body": "Une plainte sur le service est examinée par un chef d'équipe, qui peut écouter l'enregistrement de l'appel."
+    },
+    {
+      "id": "P_general_EN",
+      "topic": "general",
+      "language": "EN",
+      "title": "General questions",
+      "body": "Questions that do not fit another topic are answered by the general support queue."
+    },
+    {
+      "id": "P_general_FR",
+      "topic": "general",
+      "language": "FR",
+      "title": "Questions générales",
+      "body": "Les questions qui ne correspondent à aucun autre sujet sont traitées par la file de soutien général."
+    }
+  ]
+}

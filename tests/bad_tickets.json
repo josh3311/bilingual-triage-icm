@@ -1,9 +1,58 @@
 [
-  {"id": "T101", "subject": "Fine ticket", "body": "This one is complete and should pass.", "received_at": "2026-11-01"},
-  {"id": "T102", "subject": "Missing body", "received_at": "2026-11-01"},
-  {"id": "T103", "subject": "Body too short", "body": "Hi", "received_at": "2026-11-01"},
-  {"id": "T101", "subject": "Duplicate id", "body": "This ticket reuses an id that was already seen.", "received_at": "2026-11-01"},
-  {"id": "X999", "subject": "Bad id format", "body": "The id does not start with T plus 3 digits.", "received_at": "2026-11-01"},
-  {"id": "T105", "subject": "Bad date", "body": "The date is not a real calendar date.", "received_at": "2026-13-45"},
-  {"id": "T106", "subject": "Empty subject", "body": "The subject below is only spaces so it counts as empty.", "received_at": "2026-11-01", "subject_note": "see subject"}
+  {
+    "id": "T101",
+    "subject": "Fine ticket",
+    "body": "This one is complete and should pass.",
+    "received_at": "2026-11-01",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T102",
+    "subject": "Missing body",
+    "received_at": "2026-11-01",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T103",
+    "subject": "Body too short",
+    "body": "Hi",
+    "received_at": "2026-11-01",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T101",
+    "subject": "Duplicate id",
+    "body": "This ticket reuses an id that was already seen.",
+    "received_at": "2026-11-01",
+    "customer_id": "C001"
+  },
+  {
+    "id": "X999",
+    "subject": "Bad id format",
+    "body": "The id does not start with T plus 3 digits.",
+    "received_at": "2026-11-01",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T105",
+    "subject": "Bad date",
+    "body": "The date is not a real calendar date.",
+    "received_at": "2026-13-45",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T106",
+    "subject": "Empty subject",
+    "body": "The subject below is only spaces so it counts as empty.",
+    "received_at": "2026-11-01",
+    "subject_note": "see subject",
+    "customer_id": "C001"
+  },
+  {
+    "id": "T107",
+    "subject": "Bad customer id",
+    "body": "The customer id does not look like C plus three digits.",
+    "received_at": "2026-11-01",
+    "customer_id": "cust-7"
+  }
 ]

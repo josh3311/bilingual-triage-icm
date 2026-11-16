@@ -13,6 +13,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import audit_sample  # noqa: E402
 import check_classification  # noqa: E402
 import check_reply  # noqa: E402
+import grounding  # noqa: E402
+import lookup_records  # noqa: E402
+import records  # noqa: E402
 from common import config, load_json, mulberry32, routing, seeded_sample  # noqa: E402
 from detect_language import detect  # noqa: E402
 from route_ticket import route_all  # noqa: E402
@@ -24,7 +27,7 @@ TABLE = routing()
 
 
 def reply_items():
-    return load_json(ROOT / "runs" / RUN / "04_reply.json")
+    return load_json(ROOT / "runs" / RUN / "05_reply.json")
 
 
 class TestIntake(unittest.TestCase):
@@ -32,12 +35,13 @@ class TestIntake(unittest.TestCase):
         valid, rejected = validate_all(load_json(ROOT / "tests" / "bad_tickets.json"))
         self.assertEqual([t["id"] for t in valid], ["T101", "T106"])
         reasons = [r["reason"] for r in rejected]
-        self.assertEqual(len(rejected), 5)
+        self.assertEqual(len(rejected), 6)
         self.assertTrue(any("missing or empty field body" in r for r in reasons))
         self.assertTrue(any("body must be 10 to 2000" in r for r in reasons))
         self.assertTrue(any("duplicate id" in r for r in reasons))
         self.assertTrue(any("id must be T plus 3 digits" in r for r in reasons))
         self.assertTrue(any("not a real date" in r for r in reasons))
+        self.assertTrue(any("customer_id must be C plus 3 digits" in r for r in reasons))
 
     def test_all_30_sample_tickets_are_valid(self):
         valid, rejected = validate_all(load_json(ROOT / "data" / "sample_tickets.json"))
@@ -117,6 +121,80 @@ class TestReplyChecks(unittest.TestCase):
         self.assertTrue(any("waiting_for_approval" in p for p in check_reply.problems(self.item, CFG)))
 
 
+class TestLookup(unittest.TestCase):
+    def setUp(self):
+        self.db = records.build_db()
+        self.routed = {t["id"]: t for t in load_json(ROOT / "runs" / RUN / "03_route.json")}
+
+    def facts(self, ticket_id):
+        return records.find_facts(self.routed[ticket_id], self.db)
+
+    def test_named_order_is_found_with_its_two_equal_payments(self):
+        f = self.facts("T001")
+        self.assertEqual((f["status"], f["order"]["id"], len(f["charges"])), ("found", 5521, 2))
+        self.assertEqual(f["policy"]["topic"], "double_charge")
+
+    def test_a_locked_account_is_read_from_the_records(self):
+        f = self.facts("T003")
+        self.assertEqual((f["customer"]["account_status"], f["customer"]["locked_since"]), ("locked", "2026-11-02"))
+        self.assertEqual(f["policy"]["topic"], "locked_account")
+
+    def test_unknown_customer_is_not_found_and_flagged_for_a_person(self):
+        self.assertEqual(self.facts("T026")["status"], "not_found")
+        out = lookup_records.lookup_all([self.routed["T026"]], self.db)
+        self.assertTrue(out[0]["needs_human"])
+
+    def test_policy_comes_in_the_ticket_language(self):
+        self.assertTrue(self.facts("T002")["policy"]["id"].endswith("_FR"))
+        self.assertTrue(self.facts("T005")["policy"]["id"].endswith("_EN"))
+
+    def test_every_ticket_gets_a_policy_except_none_missing(self):
+        for ticket_id in self.routed:
+            self.assertIsNotNone(self.facts(ticket_id)["policy"], ticket_id)
+
+    def test_customers_only_see_their_own_orders(self):
+        item = {**self.routed["T001"], "customer_id": "C002"}
+        f = records.find_facts(item, self.db)
+        self.assertNotEqual(f["order"]["id"], 5521)
+
+
+class TestGrounding(unittest.TestCase):
+    def setUp(self):
+        self.items = {i["id"]: copy.deepcopy(i) for i in reply_items()}
+
+    def test_recorded_drafts_are_grounded(self):
+        for item in self.items.values():
+            self.assertEqual(grounding.problems(item), [], item["id"])
+
+    def test_an_invented_amount_is_caught(self):
+        item = self.items["T001"]
+        item["draft"] = item["draft"].replace("64.50", "74.50")
+        self.assertIn("74.5", " ".join(grounding.problems(item)))
+
+    def test_a_wrong_status_claim_is_caught(self):
+        item = self.items["T015"]
+        item["draft"] = item["draft"].replace("has not shipped yet", "is in transit")
+        self.assertIn("in transit", " ".join(grounding.problems(item)))
+
+    def test_a_billing_draft_must_name_the_order(self):
+        item = self.items["T001"]
+        item["draft"] = item["draft"].replace("order 5521", "your order")
+        self.assertIn("5521", " ".join(grounding.problems(item)))
+
+    def test_amounts_match_by_value_not_by_spelling(self):
+        self.assertEqual(grounding.normalize("54,00"), grounding.normalize("54.0"))
+
+    def test_audit_check_8_fails_on_an_invented_fact_and_points_at_the_reply_stage(self):
+        items = copy.deepcopy(reply_items())
+        sampled = audit_sample.audit(items, CFG, TABLE)["sampled_ids"]
+        target = next(i for i in items if i["id"] == sampled[0] and i.get("facts", {}).get("order"))
+        target["draft"] = target["draft"].replace(str(target["facts"]["order"]["id"]), "9999")
+        result = audit_sample.audit(items, CFG, TABLE)
+        self.assertEqual(result["verdict"], "FAIL")
+        self.assertIn(8, next(r for r in result["results"] if not r["passed"])["failed_checks"])
+        self.assertEqual(audit_sample.STAGE_FOR_CHECK[8], "05_reply")
+
+
 class TestAudit(unittest.TestCase):
     def test_recorded_run_passes_20_of_20(self):
         result = audit_sample.audit(reply_items(), CFG, TABLE)
@@ -168,6 +246,9 @@ class TestJavaScriptParity(unittest.TestCase):
         self.assertEqual(js["sampled"], py_audit["sampled_ids"])
         self.assertEqual((js["verdict"], js["passed"]), (py_audit["verdict"], py_audit["passed_count"]))
         self.assertEqual(js["reply_problem_count"], 0)
+        self.assertEqual(js["facts"], [i["facts"] for i in load_json(ROOT / "runs" / RUN / "04_lookup.json")])
+        self.assertEqual(js["needs_human"], [i["needs_human"] for i in load_json(ROOT / "runs" / RUN / "04_lookup.json")])
+        self.assertEqual(js["invented_problems"], grounding.problems({**items[0], "draft": items[0]["draft"].replace("64.50", "74.50")}))
         _, rejected = validate_all(load_json(ROOT / "tests" / "bad_tickets.json"))
         self.assertEqual([r for r in js["bad_ticket_reasons"] if r], [r["reason"] for r in rejected])
         self.assertEqual(js["random"], [0.601104, 0.448291, 0.852466])

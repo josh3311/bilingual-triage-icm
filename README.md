@@ -6,7 +6,7 @@ A Claude skill plus an ICM workspace that triages English and French support tic
 
 ## Why this exists
 
-Bilingual support teams get tickets in English and French all day. A single chat with an AI can handle one ticket, but with a whole batch it silently drops tickets, mixes languages, and promises refunds nobody approved. This project shows a different way to build it: split the work into five small stages, let scripts do every job that has an exact answer, let Claude do only the jobs that need reading and writing, and put a person at the gate.
+Bilingual support teams get tickets in English and French all day. A single chat with an AI can handle one ticket, but with a whole batch it silently drops tickets, mixes languages, and promises refunds nobody approved. This project shows a different way to build it: split the work into six small stages, let scripts do every job that has an exact answer, let Claude do only the jobs that need reading and writing, and put a person at the gate.
 
 ## Who it is for
 
@@ -19,8 +19,9 @@ flowchart LR
   A["Support tickets<br/>English and French"] --> B["01 Intake<br/>scripts"]
   B --> C["02 Classify<br/>skill + check"]
   C --> D["03 Route<br/>lookup table"]
-  D --> E["04 Reply<br/>skill + check"]
-  E --> F["05 Audit<br/>20 ticket sample"]
+  D --> L["04 Lookup<br/>records database"]
+  L --> E["05 Reply<br/>skill + fact check"]
+  E --> F["06 Audit<br/>20 ticket sample"]
   F -->|PASS| G{"Person approves?"}
   F -->|FAIL| H["Fix the stage named<br/>in the failure, re-run"]
   G -->|approved| I["outbox.json<br/>a person sends"]
@@ -32,8 +33,9 @@ flowchart LR
 | 1 | `01_intake` | Scripts | Checks every field, rejects bad tickets with a reason, tags EN or FR by counting words |
 | 2 | `02_classify` | Skill `triage-ticket`, then a script | Picks 1 of 6 categories and 1 of 3 priorities, flags `needs_human` |
 | 3 | `03_route` | Script and `data/routing_table.json` | One category gives exactly one team. An unknown category stops the run |
-| 4 | `04_reply` | Skill `draft-reply`, then a script | Writes 3 to 5 sentences in the ticket's language. The script rejects promises, wrong language and leaked team names |
-| 5 | `05_audit` | Script | Audits 20 tickets chosen with a fixed seed, 7 checks each. PASS needs 20 of 20 |
+| 4 | `04_lookup` | Script and `data/records.json` (SQLite) | Finds the customer, the order, its charges and the matching policy article. No customer record means a person is flagged |
+| 5 | `05_reply` | Skill `draft-reply`, then a script | Writes 3 to 5 sentences in the ticket's language, using only the facts found. The script rejects promises, wrong language, leaked team names and any fact not in the records |
+| 6 | `06_audit` | Script | Audits 20 tickets chosen with a fixed seed, 8 checks each. PASS needs 20 of 20 |
 | Gate | outside the stages | A person | Approves or returns. `export_approved.py` refuses unless the audit passed |
 
 Every stage folder has a `CONTEXT.md` with the same seven sections: task, inputs, skills, scripts, done when, do not, next stage. `CLAUDE.md` at the root is the map.
@@ -63,9 +65,10 @@ Needs Python 3.10 or newer. No packages to install.
 python3 scripts/run_intake.py 2026-11-15_01     # stage 1
 python3 scripts/check_classification.py 2026-11-15_01
 python3 scripts/route_ticket.py 2026-11-15_01
+python3 scripts/lookup_records.py 2026-11-15_01   # stage 4, looks up the records
 python3 scripts/check_reply.py 2026-11-15_01
 python3 scripts/audit_sample.py 2026-11-15_01    # AUDIT PASS 20/20
-python3 -m unittest discover -s tests -v          # 21 tests
+python3 -m unittest discover -s tests -v          # 33 tests
 ```
 
 To rebuild the website data after a new run: `python3 scripts/build_site_data.py <run_id>`. To view the site locally: `python3 -m http.server -d docs` and open http://localhost:8000.
@@ -82,10 +85,10 @@ To run it with Claude for real, open this folder as a Claude Code workspace, cop
 
 ```
 CLAUDE.md             the map
-01_intake ... 05_audit  one folder per stage, each with CONTEXT.md
+01_intake ... 06_audit  one folder per stage, each with CONTEXT.md
 skills/               triage-ticket and draft-reply
 scripts/              the checks, Python standard library only
-data/                 categories, routing table, word lists, 30 sample tickets
+data/                 categories, routing table, word lists, 30 sample tickets, records database
 runs/                 one folder per run, one JSON file per stage
 docs/                 the GitHub Pages site and its architecture notes
 tests/                unit tests, a JS parity test, a browser test

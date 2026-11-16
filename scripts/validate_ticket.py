@@ -9,7 +9,7 @@ from datetime import datetime
 
 from common import load_json
 
-FIELDS = ["id", "subject", "body", "received_at"]
+FIELDS = ["id", "subject", "body", "received_at", "customer_id"]
 
 
 def validate(ticket, seen_ids):
@@ -24,6 +24,8 @@ def validate(ticket, seen_ids):
         return "id must be T plus 3 digits"
     if ticket["id"] in seen_ids:
         return "duplicate id"
+    if not re.fullmatch(r"C\d{3}", ticket["customer_id"]):
+        return "customer_id must be C plus 3 digits"
     if not 1 <= len(ticket["subject"]) <= 120:
         return "subject must be 1 to 120 characters"
     if not 10 <= len(ticket["body"]) <= 2000:

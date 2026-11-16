@@ -42,8 +42,9 @@ code{font-family:var(--mono);font-size:.9em;background:#e4eff2;padding:1px 6px;b
 /* sections */
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .flow{padding-top:56px}
-.flowrow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-@media (max-width:900px){.flowrow{grid-template-columns:repeat(2,1fr)}}
+.flowrow{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+@media (max-width:1100px){.flowrow{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:700px){.flowrow{grid-template-columns:repeat(2,1fr)}}
 .stage{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
 .stage b{display:block;font-family:var(--display);font-size:17px;font-weight:600;margin:8px 0 2px}
 .stage span.s{font-size:14px;color:var(--mute);line-height:1.45;display:block}
@@ -78,7 +79,7 @@ main{display:grid;grid-template-columns:270px 1fr;gap:18px}
 .label .n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font:600 13px var(--body)}
 .hint{color:var(--mute);font-size:14px;margin:0 0 12px}
 .steps{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
-.steps button{flex:1 1 120px;padding:10px 8px;border:1px solid var(--line);background:var(--panel);color:inherit;border-radius:12px;cursor:pointer;font:600 14px var(--body);text-align:center}
+.steps button{flex:1 1 96px;padding:10px 8px;border:1px solid var(--line);background:var(--panel);color:inherit;border-radius:12px;cursor:pointer;font:600 14px var(--body);text-align:center}
 .steps button small{display:block;color:var(--mute);font:400 12px var(--body)}
 .steps button:hover{border-color:#8db9c6}
 .steps button[aria-selected=true]{border-color:var(--blue);background:var(--claude-bg)}
@@ -147,6 +148,11 @@ label{font-size:13.5px;color:var(--mute);display:block;margin:10px 0 4px}
 .trail ol{list-style:none;margin:0;padding:0}
 .trail li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:14.5px}
 .trail li button{all:unset;cursor:pointer;color:var(--blue);text-decoration:underline;font-size:13px}
+.recs{margin-top:16px;border:1.5px solid #cfe0e5;border-radius:14px;padding:14px 16px;background:#f7fafb;max-width:640px}
+.recs small{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;color:var(--mute);margin-bottom:8px;font-size:13px}
+.recs dl{display:grid;grid-template-columns:96px 1fr;gap:6px 12px;margin:0;font-size:15px}
+.recs dt{color:var(--mute)}.recs dd{margin:0}
+.recs .policy{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:14.5px;color:#2c4658}
 .deskcap{color:var(--mute);font-size:14px;margin:12px 4px 0}
 footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);font-size:14px}
 .sr{position:absolute;left:-9999px}
@@ -159,7 +165,7 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
   <img class="waves" src="waves.svg" alt="">
   <div class="inner"><div class="copy">
     <h1>An AI drafts the reply. Scripts check it. A person says OK.</h1>
-    <p class="lead">A support workspace for English and French tickets. Claude sorts each ticket and drafts the reply in the customer's language. Scripts check every draft. A person approves. It can't send anything.</p>
+    <p class="lead">A support workspace for English and French tickets. A script looks up the customer's records. Claude drafts the reply using only what it found, in the customer's language. Scripts check every fact in it. A person approves. It can't send anything.</p>
     <div class="cta">
       <button class="btn" id="heroTour">Open the demo support desk</button>
       <a class="btn ghost" href="https://github.com/josh3311/bilingual-triage-icm">Read the code on GitHub</a>
@@ -180,17 +186,18 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
       <div class="thread" id="deskDetail" aria-live="polite"></div>
     </div>
   </div>
-  <p class="deskcap">A demo desk with 30 invented tickets. Every reply here is a draft waiting for a person. Pick a ticket, read the customer's message and the draft, then see what happened to it.</p>
+  <p class="deskcap">A demo desk with 30 invented tickets. Every reply here is a draft waiting for a person. Pick a ticket, read the customer's message, the records the reply is based on and the draft, then see what happened to it.</p>
 </section>
 
 <section class="wrap flow" aria-label="How a ticket travels">
-  <h2 style="margin-bottom:14px;font-size:22px">Behind every ticket, six steps</h2>
+  <h2 style="margin-bottom:14px;font-size:22px">Behind every ticket, seven steps</h2>
   <div class="flowrow">
     <div class="stage"><span class="who script">Script</span><b>Intake</b><span class="s">Rejects incomplete tickets. Tags English or French.</span></div>
     <div class="stage"><span class="who claude">Claude</span><b>Classify</b><span class="s">Picks a category and a priority.</span></div>
     <div class="stage"><span class="who script">Script</span><b>Route</b><span class="s">One category, one team. Never guesses.</span></div>
-    <div class="stage"><span class="who claude">Claude</span><b>Reply</b><span class="s">Drafts 3 to 5 sentences in the customer's language.</span></div>
-    <div class="stage"><span class="who script">Script</span><b>Audit</b><span class="s">Checks a fixed sample of 20 tickets, 7 ways.</span></div>
+    <div class="stage"><span class="who script">Script</span><b>Lookup</b><span class="s">Finds the customer, order, charges and policy in the records.</span></div>
+    <div class="stage"><span class="who claude">Claude</span><b>Reply</b><span class="s">Drafts 3 to 5 sentences from those facts, in the customer's language.</span></div>
+    <div class="stage"><span class="who script">Script</span><b>Audit</b><span class="s">Checks a fixed sample of 20 tickets, 8 ways, facts included.</span></div>
     <div class="stage"><span class="who person">A person</span><b>Approval</b><span class="s">Approves or returns. Nothing is ever sent.</span></div>
   </div>
   <p class="flowcap">Blue is Claude reading and writing. Green is a script counting and checking. Amber is a person deciding.</p>
@@ -204,6 +211,7 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
       <ul>
         <li>Tickets can be dropped or counted wrong, and nobody notices.</li>
         <li>A reply can promise a refund or a deadline nobody approved.</li>
+        <li>A reply can state an amount or a delivery status nobody looked up.</li>
         <li>French tickets can get English replies.</li>
         <li>When something is wrong, you re-read the whole chat to find where.</li>
       </ul>
@@ -212,18 +220,20 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
       <h3>This workspace</h3>
       <ul>
         <li>A script counts tickets in and out of every stage.</li>
+        <li>A script looks up the customer's records before any reply is written.</li>
+        <li>A script checks every amount, date and status in a draft against those records.</li>
         <li>A script blocks promise phrases and team names in drafts.</li>
         <li>A script checks each draft is in the ticket's language.</li>
         <li>A failed audit names the one stage to fix.</li>
       </ul>
     </div>
   </div>
-  <p class="proof">You can check all of this below in two minutes. Break a ticket on purpose and watch the audit catch it. Everything runs in your browser, uses no tokens, and uses 30 invented tickets.</p>
+  <p class="proof">You can check all of this below in two minutes. Break a ticket on purpose, or make Claude invent a fact, and watch the audit catch it. Everything runs in your browser, uses no tokens, and uses 30 invented tickets.</p>
 </section>
 
 <section class="wrap try" id="try">
   <h2 class="big">See how each ticket was handled</h2>
-  <p class="sub">Under the desk are five checked stages. Start the tour and the page clicks for you, or pick a ticket and look around.</p>
+  <p class="sub">Under the desk are six checked stages. Start the tour and the page clicks for you, or pick a ticket and look around.</p>
   <div class="card tour" id="tour" aria-live="polite"><div id="tourBody"></div></div>
   <main>
     <aside class="card list" aria-label="Tickets"><div class="label" style="padding:6px 8px 2px"><span class="n">1</span>Pick a ticket</div><p class="hint" style="padding:0 8px;margin:0 0 6px">Odd numbers are English, even are French.</p><div id="tickets"></div></aside>
@@ -236,10 +246,11 @@ footer{max-width:1180px;margin:0 auto;padding:30px 20px 50px;color:var(--mute);f
       </div>
       <div class="card" style="margin-top:16px">
         <div class="label"><span class="n">3</span>Check all 30 tickets, then try to break it</div>
-        <p class="hint">Press <strong>Run all checks</strong> first. It should pass. Then press <strong>Try to break it</strong> to watch the audit catch a bad edit. <strong>Reset</strong> undoes it.</p>
+        <p class="hint">Press <strong>Run all checks</strong> first. It should pass. Then press <strong>Try to break it</strong> (a wrong team) or <strong>Make Claude invent a fact</strong> (a wrong order number in a draft) to watch the audit catch it. <strong>Reset</strong> undoes it.</p>
         <div class="row">
           <button class="btn" id="runAll">Run all checks</button>
           <button class="btn ghost" id="tamper">Try to break it</button>
+          <button class="btn ghost" id="tamperFact">Make Claude invent a fact</button>
           <button class="btn ghost" id="reset">Reset</button>
         </div>
         <div id="batch" aria-live="polite"></div>
@@ -271,9 +282,10 @@ const STAGES = [
   { key: "01_intake", name: "1 Intake", sub: "script" },
   { key: "02_classify", name: "2 Classify", sub: "Claude skill" },
   { key: "03_route", name: "3 Route", sub: "script" },
-  { key: "04_reply", name: "4 Reply", sub: "Claude skill" },
-  { key: "05_audit", name: "5 Audit", sub: "script" },
-  { key: "gate", name: "6 Approval", sub: "a person" },
+  { key: "04_lookup", name: "4 Lookup", sub: "script + records" },
+  { key: "05_reply", name: "5 Reply", sub: "Claude skill" },
+  { key: "06_audit", name: "6 Audit", sub: "script" },
+  { key: "gate", name: "7 Approval", sub: "a person" },
 ];
 const state = { data: null, rows: [], selected: "T001", stage: "01_intake", tampered: null, approved: null, decisions: {}, filter: "all" };
 const $ = (id) => document.getElementById(id);
@@ -290,6 +302,31 @@ function contextBox(key) {
   return `<details><summary>The rules for this stage (${key}/CONTEXT.md)</summary><pre>${esc(state.data.contexts[key])}</pre></details>`;
 }
 
+const money = (n) => Number(n).toFixed(2);
+function recordsCard(r) {
+  const f = r.facts;
+  if (!f) return "";
+  if (!f.customer) return `<div class="recs"><small><span class="pill warn">No customer record</span></small><p style="margin:0">The records have no customer ${esc(r.customer_id)}, so there is nothing to check a reply against. A person confirms the details first.</p></div>`;
+  const c = f.customer, o = f.order;
+  const account = c.account_status === "locked" ? `Locked since ${c.locked_since} (${c.failed_logins} failed logins)` : "Active";
+  const order = o ? `${o.id}, ${money(o.total)} dollars, ${o.status === "shipped" ? "shipped " + o.shipped_at : o.status + (o.shipped_at ? ", shipped " + o.shipped_at : "")}` : (r.category === "billing" || r.category === "delivery" ? "No order found" : "Not needed for this ticket");
+  const track = o && o.status !== "processing" ? `${o.tracking_status.replace("_", " ")}, last update ${o.tracking_last_update}, expected ${o.expected_at}` : (o ? "Not shipped yet" : "");
+  const charges = f.charges.length ? f.charges.map((x) => `${money(x.amount)} ${x.kind.replace("_", " ")} on ${x.charged_at}`).join("<br>") : "";
+  return `<div class="recs"><small><span class="pill">From the records</span><span>customer ${esc(c.id)}</span></small>
+    <dl><dt>Account</dt><dd>${esc(account)}</dd>
+    <dt>Order</dt><dd>${esc(order)}</dd>
+    ${track ? `<dt>Tracking</dt><dd>${esc(track)}</dd>` : ""}
+    ${charges ? `<dt>Charges</dt><dd>${charges}</dd>` : ""}</dl>
+    ${f.policy ? `<p class="policy"><strong>${esc(f.policy.title)}.</strong> ${esc(f.policy.body)}</p>` : ""}</div>`;
+}
+function lookupSummary(r) {
+  const f = r.facts;
+  if (!f.customer) return `No customer record for ${r.customer_id}, so a person is flagged.`;
+  const bits = [`customer ${f.customer.id}`];
+  if (f.order) bits.push(`order ${f.order.id}`);
+  if (f.charges.length) bits.push(`${f.charges.length} charge${f.charges.length > 1 ? "s" : ""}`);
+  return `Found ${bits.join(", ")} and the policy article "${f.policy ? f.policy.title : "none"}".`;
+}
 function renderTickets() {
   $("tickets").innerHTML = state.rows.map((r) => `
     <button data-id="${r.id}" aria-current="${r.id === state.selected}">
@@ -302,19 +339,19 @@ function renderSteps() {
 }
 
 function panelIntake(r) {
-  const valid = T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at }, new Set());
+  const valid = T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at, customer_id: r.customer_id }, new Set());
   const d = T.detect(r.subject + " " + r.body, state.data.words);
   return `${who("script")}
     <h2>Check the ticket and tag its language</h2>
     <h3>Ticket ${r.id}, received ${r.received_at}</h3>
     <div class="box"><strong>${esc(r.subject)}</strong>\n${esc(r.body)}</div>
     <h3>Checks</h3>
-    ${res(!valid, valid ? "Rejected: " + valid : "All four fields present, id and date well formed, lengths in range")}
+    ${res(!valid, valid ? "Rejected: " + valid : "All five fields present (including the customer id), id and date well formed, lengths in range")}
     ${res(true, `Language ${d.language}, confidence ${d.confidence} (French signals ${d.fr}, English signals ${d.en})`)}
     ${contextBox("01_intake")}`;
 }
 function panelClassify(r) {
-  const out = { id: r.id, category: r.category, priority: r.priority, needs_human: r.needs_human, reason: r.reason };
+  const out = { id: r.id, category: r.category, priority: r.priority, needs_human: state.data.classify[r.id].needs_human, reason: r.reason };
   const problems = T.classificationProblems(out, state.data.config);
   return `${who("claude")}
     <h2>Claude reads the ticket and picks a category and a priority</h2>
@@ -336,16 +373,35 @@ function panelRoute(r) {
     <h3>Checks</h3>${res(!!r.team, r.team ? "Category found in the routing table" : "Unknown category: the script stops and never guesses")}
     ${contextBox("03_route")}`;
 }
+function panelLookup(r) {
+  const f = r.facts;
+  const named = (r.subject + " " + r.body).match(/\b\d{4}\b/g) || [];
+  const how = f.order ? (named.includes(String(f.order.id)) ? "the order number written in the ticket" : "the customer's most recent order") : "no order (this kind of ticket does not need one)";
+  const nrec = state.data.records;
+  return `${who("script")}
+    <h2>Look up what the records say before anything is written</h2>
+    <p>No AI here. A script asks the records database for this customer, the order the ticket is about, that order's charges, and the one policy article that fits. Claude writes the reply next, and may only use what this step found. To use a real company database, this is the one step you point at it.</p>
+    <dl class="kv"><dt>Customer</dt><dd>${esc(r.customer_id)}</dd><dt>Order from</dt><dd>${esc(how)}</dd><dt>Policy topic</dt><dd>${f.policy ? esc(f.policy.topic) : "none"}</dd><dt>Result</dt><dd><strong>${esc(f.status)}</strong></dd></dl>
+    <h3>What it found</h3>${recordsCard(r)}
+    <h3>Checks</h3>
+    ${res(!!f.customer, f.customer ? "Customer record found" : "No customer record: needs_human is set to true and the draft says a person will confirm details")}
+    ${res(!!f.policy, f.policy ? "A policy article in the ticket's language was found" : "No policy article found")}
+    ${res(f.status !== "partial", f.status === "partial" ? "A billing or delivery ticket with no order on record" : "Everything this ticket needs was found")}
+    <details><summary>The raw lookup result (04_lookup.json for ${esc(r.id)})</summary><pre>${esc(JSON.stringify(f, null, 2))}</pre></details>
+    <p class="hint">The records database holds ${nrec.customers.length} customers, ${nrec.orders.length} orders, ${nrec.charges.length} charges and ${nrec.policies.length} policy articles, all invented.</p>
+    ${contextBox("04_lookup")}`;
+}
 function panelReply(r) {
   const problems = T.replyProblems(r, state.data.config, state.data.routing, state.data.words);
   const count = T.sentenceCount(r.draft);
   return `${who("claude")}
     <h2>Claude writes a short draft in the ticket's own language</h2>
-    <p>The skill <code>draft-reply</code> writes ${r.language === "FR" ? "French with vous" : "English"}. It may not promise a refund, a date or a time limit.</p>
+    <p>The skill <code>draft-reply</code> writes ${r.language === "FR" ? "French with vous" : "English"}. It may state only what the lookup found, and may not promise a refund, a date or a time limit.</p>
+    <h3>The facts it was given</h3>${recordsCard(r)}
     <h3>Draft (${r.language}, ${count} sentences)</h3><div class="box">${esc(r.draft)}</div>
     <h3>Checks</h3>
-    ${problems.length ? problems.map((p) => res(false, p)).join("") : res(true, `${count} sentences, right language, no banned promise phrase, no team names or priority labels, status waiting_for_approval`)}
-    ${contextBox("04_reply")}
+    ${problems.length ? problems.map((p) => res(false, p)).join("") : res(true, `${count} sentences, right language, no banned promise phrase, no team names or priority labels, every amount, date and status matches the records, status waiting_for_approval`)}
+    ${contextBox("05_reply")}
     <details><summary>The skill instructions (draft-reply/SKILL.md)</summary><pre>${esc(state.data.skills["draft-reply"])}</pre></details>`;
 }
 function auditResult() {
@@ -359,13 +415,13 @@ function panelAudit(r) {
     return res(!failed, `Check ${n}: ${T.CHECK_NAMES[n]}`);
   }).join("");
   return `${who("script")}
-    <h2>Audit a fixed sample of 20 tickets with 7 checks each</h2>
+    <h2>Audit a fixed sample of 20 tickets with 8 checks each</h2>
     <p>The sample is picked with a fixed seed, so anyone gets the same 20. A pass needs every sampled ticket to pass every check.</p>
     <div class="banner ${a.verdict === "PASS" ? "ok" : "bad"}">AUDIT ${a.verdict} ${a.passed_count}/${a.sample_size}</div>
     ${a.verdict === "FAIL" ? a.results.filter((x) => !x.passed).map((x) => `<p>${x.id} failed checks ${x.failed_checks.join(", ")}. Go back and fix: <strong>${[...new Set(x.failed_checks.map((c) => T.STAGE_FOR_CHECK[c]))].join(", ")}</strong>.</p>`).join("") : ""}
     <h3>${r.id} ${mine ? "is in the sample" : "is not in the sample (the sample has 20 of 30)"}</h3>${checks}
     <h3>Sampled ids</h3><div class="box mono">${a.sampled_ids.join(" ")}</div>
-    ${contextBox("05_audit")}`;
+    ${contextBox("06_audit")}`;
 }
 function panelGate() {
   const a = auditResult();
@@ -382,7 +438,7 @@ function panelGate() {
     ${body}${outbox}
     <p class="sub">Tickets with needs_human true: ${state.rows.filter((r) => r.needs_human).map((r) => r.id).join(", ")}.</p>`;
 }
-const PANELS = { "01_intake": panelIntake, "02_classify": panelClassify, "03_route": panelRoute, "04_reply": panelReply, "05_audit": panelAudit };
+const PANELS = { "01_intake": panelIntake, "02_classify": panelClassify, "03_route": panelRoute, "04_lookup": panelLookup, "05_reply": panelReply, "06_audit": panelAudit };
 function render() {
   renderTickets(); renderSteps(); renderDesk();
   $("panel").innerHTML = state.stage === "gate" ? panelGate() : PANELS[state.stage](row());
@@ -393,19 +449,21 @@ function render() {
 function runAll() {
   const cfg = state.data.config, table = state.data.routing, words = state.data.words;
   const seen = new Set();
-  const counts = { intake: 0, classify: 0, route: 0, reply: 0 };
+  const counts = { intake: 0, classify: 0, route: 0, lookup: 0, reply: 0 };
   state.rows.forEach((r) => {
-    if (!T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at }, new Set())) counts.intake++;
+    if (!T.validate({ id: r.id, subject: r.subject, body: r.body, received_at: r.received_at, customer_id: r.customer_id }, new Set())) counts.intake++;
     if (!T.classificationProblems(r, cfg).length) counts.classify++;
     if (r.team && table[r.category] === r.team) counts.route++;
+    if (r.facts && r.lookup_status !== "not_found") counts.lookup++;
     if (!T.replyProblems(r, cfg, table, words).length) counts.reply++;
   });
   const a = auditResult();
   const line = (label, n) => res(n === state.rows.length, `${label}: ${n} of ${state.rows.length} OK`);
-  $("batch").innerHTML = line("Intake", counts.intake) + line("Classify", counts.classify) + line("Route", counts.route) + line("Reply", counts.reply)
+  $("batch").innerHTML = line("Intake", counts.intake) + line("Classify", counts.classify) + line("Route", counts.route)
+    + res(true, `Lookup: ${counts.lookup} of ${state.rows.length} matched a customer record, ${state.rows.length - counts.lookup} flagged for a person`) + line("Reply", counts.reply)
     + `<div class="banner ${a.verdict === "PASS" ? "ok" : "bad"}">AUDIT ${a.verdict} ${a.passed_count}/${a.sample_size}</div>`
     + (a.verdict === "FAIL" ? a.results.filter((x) => !x.passed).map((x) => `<p>${x.id} failed check ${x.failed_checks.join(", ")}. Fix stage: <strong>${[...new Set(x.failed_checks.map((c) => T.STAGE_FOR_CHECK[c]))].join(", ")}</strong></p>`).join("") : "");
-  if (state.stage === "05_audit" || state.stage === "gate") render();
+  if (state.stage === "06_audit" || state.stage === "gate") render();
 }
 function tamper() {
   const a = T.audit(state.rows, state.data.config, state.data.routing, state.data.words);
@@ -415,6 +473,21 @@ function tamper() {
   const wrong = Object.values(state.data.routing).find((t) => t !== target.team);
   target.team = wrong;
   $("batch").innerHTML = `<div class="banner warn">Changed the team of ${target.id} from "${esc(state.tampered.team)}" to "${esc(wrong)}", as if a bad edit slipped in. Now the audit runs again.</div>`;
+  const keep = $("batch").innerHTML;
+  runAll();
+  $("batch").innerHTML = keep + $("batch").innerHTML;
+  state.approved = null; state.decisions = {};
+  render();
+}
+function tamperFact() {
+  if (state.tampered) return;
+  const a = T.audit(state.rows, state.data.config, state.data.routing, state.data.words);
+  const target = a.sampled_ids.map((id) => state.rows.find((r) => r.id === id)).find((r) => r.facts && r.facts.order && r.draft.includes(String(r.facts.order.id)));
+  if (!target) return;
+  const real = String(target.facts.order.id), invented = String(target.facts.order.id + 1111);
+  state.tampered = { id: target.id, draft: target.draft };
+  target.draft = target.draft.split(real).join(invented);
+  $("batch").innerHTML = `<div class="banner warn">In the draft for ${target.id}, order ${real} was changed to ${invented}, as if Claude made up a number. The records say ${real}. Now the audit runs again.</div>`;
   const keep = $("batch").innerHTML;
   runAll();
   $("batch").innerHTML = keep + $("batch").innerHTML;
@@ -450,7 +523,7 @@ async function runLive() {
   $("runLive").disabled = true;
   try {
     const d = T.detect(r.subject + " " + r.body, state.data.words);
-    const ticket = { id: r.id, subject: r.subject, body: r.body, received_at: r.received_at, language: d.language };
+    const ticket = { id: r.id, subject: r.subject, body: r.body, received_at: r.received_at, customer_id: r.customer_id, language: d.language };
     const cls = parseJson(await callClaude(key, model, state.data.skills["triage-ticket"], JSON.stringify(ticket)));
     const clsProblems = T.classificationProblems(cls, state.data.config);
     const routed = T.route(cls, state.data.routing);
@@ -460,11 +533,13 @@ async function runLive() {
       return;
     }
     html += `<h3>Stage 3 (script)</h3>${res(true, "Routed to " + routed.team)}`;
-    const routedTicket = { ...ticket, category: cls.category, priority: cls.priority, team: routed.team, needs_human: cls.needs_human };
+    const facts = T.findFacts({ ...ticket, category: cls.category }, state.data.records);
+    html += `<h3>Stage 4 (script)</h3>${res(!!facts.customer, lookupSummary({ customer_id: ticket.customer_id, facts }))}`;
+    const routedTicket = { ...ticket, category: cls.category, priority: cls.priority, team: routed.team, needs_human: cls.needs_human || facts.status === "not_found", facts };
     const rep = parseJson(await callClaude(key, model, state.data.skills["draft-reply"], JSON.stringify(routedTicket)));
     const item = { ...routedTicket, draft: rep.draft, draft_language: rep.language, status: rep.status };
     const problems = T.replyProblems(item, state.data.config, state.data.routing, state.data.words);
-    html += `<h3>Stage 4 (live draft)</h3><div class="box">${esc(rep.draft || "")}</div>` + (problems.length ? problems.map((p) => res(false, p)).join("") : res(true, "Draft passes every reply check"));
+    html += `<h3>Stage 5 (live draft)</h3><div class="box">${esc(rep.draft || "")}</div>` + (problems.length ? problems.map((p) => res(false, p)).join("") : res(true, "Draft passes every reply check, including the fact check against the records"));
     out.innerHTML = html + `<div class="banner warn">Live drafts are not audited into the recorded batch and are never sent.</div>`;
   } catch (e) {
     out.innerHTML = `<div class="banner bad">Live call failed: ${esc(e.message)}</div>`;
@@ -479,9 +554,10 @@ const TOUR = [
   { ticket: "T002", stage: "01_intake", title: "Meet a ticket", what: "This is ticket T002, written in French. Stage 1 is a script. It checks the ticket is complete and counts French and English words to tag the language. Look at the green check marks: no AI was used here.", click: "Next opens the Classify stage." },
   { ticket: "T002", stage: "02_classify", title: "Claude reads and decides", what: "Now Claude reads the ticket and picks one of 6 categories and one of 3 priorities. This answer was recorded from a real Claude run. A script then checks the answer is an allowed value, so Claude never grades its own work.", click: "Next opens the Route stage." },
   { ticket: "T002", stage: "03_route", title: "A script picks the team", what: "No AI here. A lookup table gives exactly one team per category, so one ticket never lands on two desks. The bold row in the table is the match.", click: "Next opens the Reply stage." },
-  { ticket: "T002", stage: "04_reply", title: "Claude drafts a reply in French", what: "Claude writes a short reply in the ticket's own language. A script checks it is 3 to 5 sentences, in the right language, with no promises like refunds or deadlines. This is only a draft. Nothing is sent.", click: "Next runs the audit on all 30 tickets." },
-  { ticket: "T002", stage: "05_audit", title: "The audit checks 20 tickets", what: "A script picks 20 tickets with a fixed seed and runs 7 checks on each. It should say AUDIT PASS 20/20. Scroll down: the batch box under number 3 shows the same result.", click: "Next breaks one ticket on purpose.", action: "runAll" },
-  { ticket: "T002", stage: "05_audit", title: "Now watch it catch a mistake", what: "I just changed one ticket's team to a wrong one, as if a bad edit slipped in. The audit now says FAIL and names the stage to fix (03_route). That is the point of the project: a failure points at one stage.", click: "Next shows the approval gate.", action: "tamper" },
+  { ticket: "T002", stage: "04_lookup", title: "A script finds the facts", what: "Before anything is written, a script asks the records: who is this customer, which order is this about, what does the tracking say, which policy applies. For T002 it finds order 7340, in transit. If a customer is not in the records, the ticket is flagged for a person instead.", click: "Next opens the Reply stage." },
+  { ticket: "T002", stage: "05_reply", title: "Claude drafts from those facts, in French", what: "Claude writes a short reply in the ticket's own language, using only the facts the lookup found. A script then checks every amount, date and status in it against the records, plus the length, the language and that nothing is promised. This is only a draft. Nothing is sent.", click: "Next runs the audit on all 30 tickets." },
+  { ticket: "T002", stage: "06_audit", title: "The audit checks 20 tickets", what: "A script picks 20 tickets with a fixed seed and runs 8 checks on each. It should say AUDIT PASS 20/20. Scroll down: the batch box under number 3 shows the same result.", click: "Next breaks one ticket on purpose.", action: "runAll" },
+  { ticket: "T002", stage: "06_audit", title: "Now watch it catch an invented fact", what: "I just changed an order number in one draft to a number that is not in the records, as if Claude made it up. The audit now says FAIL on check 8 and names the stage to fix (05_reply). That is the point of the project: a failure points at one stage.", click: "Next shows the approval gate.", action: "tamperFact" },
   { ticket: "T002", stage: "gate", title: "A person has the last word", what: "The Approve button is locked because the audit failed. After the fix (Reset) it opens, and a person clicks Approve. Even then, nothing is sent. The project has no sending tool at all.", click: "Next fixes the break and opens the gate.", action: "tamperGate" },
   { ticket: "T002", stage: "gate", title: "That is the whole flow", what: "The gate is open again after the fix. Now explore on your own: pick any ticket in list 1, click any stage in 2, or use 4 to run a ticket live with your own API key. Everything you saw uses scripts for checking and a person for approval.", click: "You can restart the tour any time.", action: "fixed" },
 ];
@@ -490,7 +566,7 @@ function tourRender() {
   const box = $("tourBody");
   if (tour.i < 0) {
     box.innerHTML = `<div class="count">Start here</div><h2>New here? Take the 1 minute guided tour</h2>
-      <p>This page shows how a support ticket is handled in five checked stages. The tour clicks for you and explains each step. You can also skip it and click around.</p>
+      <p>This page shows how a support ticket is handled in six checked stages. The tour clicks for you and explains each step. You can also skip it and click around.</p>
       <div class="row"><button class="btn" id="tourStart">Start the tour</button><button class="btn ghost" id="tourSkip">Skip, I will explore</button></div>
       <div class="legend"><span class="who script">Script</span> counts and checks, no AI <span class="who claude">Claude skill</span> reads and writes, recorded <span class="who person">A person</span> approves</div>`;
     $("tourStart").onclick = () => tourGo(0);
@@ -514,12 +590,12 @@ function tourGo(i) {
   // Start every step from a clean state, then replay the actions needed to reach it.
   reset();
   state.selected = t.ticket; state.stage = t.stage;
-  if (["runAll", "tamper", "tamperGate", "fixed"].includes(t.action) || i >= 4) { runAll(); }
-  if (t.action === "tamper" || t.action === "tamperGate") { tamper(); }
+  if (["runAll", "tamperFact", "tamperGate", "fixed"].includes(t.action) || i >= 5) { runAll(); }
+  if (t.action === "tamperFact" || t.action === "tamperGate") { tamperFact(); }
   if (t.action === "fixed") { reset(); runAll(); }
   state.stage = t.stage; state.selected = t.ticket;
   render(); tourRender();
-  const target = t.stage === "05_audit" || t.stage === "gate" ? $("panel") : $("panel");
+  const target = t.stage === "06_audit" || t.stage === "gate" ? $("panel") : $("panel");
   target.classList.remove("pulse"); void target.offsetWidth; target.classList.add("pulse");
   $("tour").scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -552,19 +628,21 @@ function renderDesk() {
   const problems = T.replyProblems(r, state.data.config, state.data.routing, state.data.words);
   const inSample = a.sampled_ids.includes(r.id);
   const gateOpen = a.verdict === "PASS";
-  const checks = ["3 to 5 sentences", "Right language", "No promises", "No team names", "Marked as a draft"];
+  const checks = ["3 to 5 sentences", "Right language", "No promises", "No team names", "Facts match the records", "Marked as a draft"];
   const trail = [
     ["Script", "script", "Intake", `Ticket is complete. Language ${r.language}, confidence ${r.confidence}.`, "01_intake"],
     ["Claude", "claude", "Classify", `${r.category}, ${r.priority}. ${r.reason}`, "02_classify"],
     ["Script", "script", "Route", `Sent to ${r.team}${r.urgent ? " as urgent" : ""}.`, "03_route"],
-    ["Claude", "claude", "Reply", problems.length ? "Draft failed a check." : "Draft written and passed every reply check.", "04_reply"],
-    ["Script", "script", "Audit", inSample ? `This ticket is in the audit sample. Batch audit ${a.verdict}.` : `Not in the sample of 20. Batch audit ${a.verdict}.`, "05_audit"],
+    ["Script", "script", "Lookup", lookupSummary(r), "04_lookup"],
+    ["Claude", "claude", "Reply", problems.length ? "Draft failed a check." : "Draft written from those facts and passed every reply check.", "05_reply"],
+    ["Script", "script", "Audit", inSample ? `This ticket is in the audit sample. Batch audit ${a.verdict}.` : `Not in the sample of 20. Batch audit ${a.verdict}.`, "06_audit"],
     ["A person", "person", "Approval", st + ".", "gate"],
   ];
   $("deskDetail").innerHTML = `
     <h2>${esc(r.subject)}</h2>
     <div class="meta"><span class="pill">${r.id}</span><span class="pill">${r.language === "FR" ? "French" : "English"}</span><span class="pill claude">${esc(r.category.replace("_", " "))}</span><span class="pill ${r.priority === "P1" ? "bad" : ""}">${r.priority}${r.priority === "P1" ? " urgent" : ""}</span><span class="pill">${esc(r.team)}</span>${r.needs_human ? '<span class="pill warn">Needs a person</span>' : ""}<span class="pill ${kind}">${st}</span></div>
     <div class="bubble"><small>Customer message, received ${r.received_at}</small>${esc(r.body)}</div>
+    ${recordsCard(r)}
     <div class="draft"><small><span class="pill claude">Draft by Claude</span><span>in ${r.language === "FR" ? "French" : "English"}. Not sent.</span></small><p>${esc(r.draft)}</p>
       <div class="chips">${checks.map((c) => `<span class="pill ${problems.length ? "bad" : "ok"}">${problems.length ? "" : "✓ "}${c}</span>`).join("")}</div>
       <div class="row"><button class="btn" data-act="approve" ${gateOpen ? "" : "disabled"}>Approve this reply</button><button class="btn ghost" data-act="return">Return for changes</button></div>
@@ -590,7 +668,7 @@ async function init() {
   $("steps").onclick = (e) => { const b = e.target.closest("button[data-stage]"); if (b) { state.stage = b.dataset.stage; render(); } };
   deskInit();
   $("heroTour").onclick = () => { $("desk").scrollIntoView({ behavior: "smooth", block: "start" }); };
-  $("runAll").onclick = runAll; $("tamper").onclick = tamper; $("reset").onclick = reset;
+  $("runAll").onclick = runAll; $("tamper").onclick = tamper; $("tamperFact").onclick = tamperFact; $("reset").onclick = reset;
   $("apiKey").oninput = () => { $("runLive").disabled = $("apiKey").value.trim() === ""; };
   $("runLive").onclick = runLive;
   render(); tourRender();

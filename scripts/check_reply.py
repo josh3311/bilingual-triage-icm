@@ -1,4 +1,4 @@
-"""Stage 04: check each draft reply. No AI involved.
+"""Stage 05: check each draft reply. No AI involved.
 
 Usage: python scripts/check_reply.py <run_id>
 Prints OK <id> or BAD <id>: <reason>. Exit code 1 if any line is BAD.
@@ -8,6 +8,7 @@ import sys
 
 from common import config, load_stage, routing
 from detect_language import detect
+from grounding import problems as grounding_problems
 
 SENTENCE_SPLIT = re.compile(r"(?<=[.!?])\s+")
 PRIORITY_LABEL = re.compile(r"\bP[123]\b")
@@ -48,6 +49,7 @@ def problems(item, cfg):
     leaked = internal_words(draft)
     if leaked:
         found.append("internal words in draft: " + ", ".join(leaked))
+    found += grounding_problems(item)
     if item.get("status") != "waiting_for_approval":
         found.append("status must be waiting_for_approval")
     return found
@@ -59,7 +61,7 @@ def main():
         return 2
     cfg = config()
     bad = 0
-    for item in load_stage(sys.argv[1], "04_reply.json"):
+    for item in load_stage(sys.argv[1], "05_reply.json"):
         found = problems(item, cfg)
         if found:
             bad += 1

@@ -175,183 +175,925 @@
       "id": "T001",
       "subject": "Charged twice for my order",
       "body": "I was charged twice for order 5521 and the money has left my account. Please fix this as soon as possible.",
-      "received_at": "2026-11-02"
+      "received_at": "2026-11-02",
+      "customer_id": "C001"
     },
     {
       "id": "T002",
       "subject": "Mon colis est en retard",
       "body": "Bonjour, mon colis devait arriver mardi et je ne l'ai toujours pas reçu. Le suivi indique encore en transit.",
-      "received_at": "2026-11-03"
+      "received_at": "2026-11-03",
+      "customer_id": "C002"
     },
     {
       "id": "T003",
       "subject": "I cannot log in",
       "body": "I cannot log in to my account. It says my account is locked after too many attempts. I need access to place an order today.",
-      "received_at": "2026-11-03"
+      "received_at": "2026-11-03",
+      "customer_id": "C003"
     },
     {
       "id": "T004",
       "subject": "Question sur ma facture",
       "body": "Bonjour, je ne comprends pas une ligne sur ma facture de novembre. Pouvez-vous m'expliquer ce que représentent les frais de service?",
-      "received_at": "2026-11-04"
+      "received_at": "2026-11-04",
+      "customer_id": "C004"
     },
     {
       "id": "T005",
       "subject": "Package never arrived",
       "body": "My package was shipped on October 20 and it still has not arrived after more than three weeks. The tracking page has not changed.",
-      "received_at": "2026-11-12"
+      "received_at": "2026-11-12",
+      "customer_id": "C005"
     },
     {
       "id": "T006",
       "subject": "Mon appareil ne fonctionne pas",
       "body": "Bonjour, l'appareil que j'ai reçu la semaine dernière ne s'allume pas du tout. J'ai essayé avec un autre câble.",
-      "received_at": "2026-11-05"
+      "received_at": "2026-11-05",
+      "customer_id": "C006"
     },
     {
       "id": "T007",
       "subject": "Very poor service",
       "body": "I am unhappy with the service I received. I waited 40 minutes on the phone and nobody was able to help me.",
-      "received_at": "2026-11-05"
+      "received_at": "2026-11-05",
+      "customer_id": "C007"
     },
     {
       "id": "T008",
       "subject": "Compte bloqué",
       "body": "Bonjour, mon compte est bloqué et je ne peux plus me connecter. Je dois accéder à mes commandes aujourd'hui.",
-      "received_at": "2026-11-06"
+      "received_at": "2026-11-06",
+      "customer_id": "C008"
     },
     {
       "id": "T009",
       "subject": "Item arrived broken",
       "body": "The screen of the item I ordered arrived cracked. I have photos if you need them.",
-      "received_at": "2026-11-06"
+      "received_at": "2026-11-06",
+      "customer_id": "C009"
     },
     {
       "id": "T010",
       "subject": "Livraison le dimanche?",
       "body": "Bonjour, je voudrais savoir si vous livrez aussi le dimanche. Merci d'avance.",
-      "received_at": "2026-11-07"
+      "received_at": "2026-11-07",
+      "customer_id": "C010"
     },
     {
       "id": "T011",
       "subject": "Business hours question",
       "body": "Hello, what are your opening hours during the holidays? Thank you.",
-      "received_at": "2026-11-07"
+      "received_at": "2026-11-07",
+      "customer_id": "C011"
     },
     {
       "id": "T012",
       "subject": "Colis endommagé",
       "body": "Bonjour, mon colis est arrivé avec la boîte abîmée, mais l'article semble correct. Je voulais vous le signaler.",
-      "received_at": "2026-11-08"
+      "received_at": "2026-11-08",
+      "customer_id": "C012"
     },
     {
       "id": "T013",
       "subject": "Invoice question",
       "body": "I received an invoice with a charge I do not recognize for 14.99 dollars. Can you tell me what it is for?",
-      "received_at": "2026-11-08"
+      "received_at": "2026-11-08",
+      "customer_id": "C013"
     },
     {
       "id": "T014",
       "subject": "Plainte formelle",
       "body": "Bonjour, c'est la troisième fois que je vous écris sans réponse. Si le problème n'est pas réglé, je vais consulter un avocat.",
-      "received_at": "2026-11-09"
+      "received_at": "2026-11-09",
+      "customer_id": "C014"
     },
     {
       "id": "T015",
       "subject": "Wrong address on my order",
       "body": "I entered the wrong apartment number on my order. Can you update the delivery address before it ships?",
-      "received_at": "2026-11-09"
+      "received_at": "2026-11-09",
+      "customer_id": "C015"
     },
     {
       "id": "T016",
       "subject": "Débité deux fois",
       "body": "Bonjour, j'ai été débité deux fois pour ma commande 8812. Le montant a quitté mon compte mardi.",
-      "received_at": "2026-11-10"
+      "received_at": "2026-11-10",
+      "customer_id": "C016"
     },
     {
       "id": "T017",
       "subject": "A few problems",
       "body": "My package is late and my invoice looks wrong. I also have a question about your return policy.",
-      "received_at": "2026-11-10"
+      "received_at": "2026-11-10",
+      "customer_id": "C017"
     },
     {
       "id": "T018",
       "subject": "L'application plante",
       "body": "Bonjour, l'application se ferme toute seule quand j'ouvre mon panier. J'ai déjà réinstallé l'application.",
-      "received_at": "2026-11-10"
+      "received_at": "2026-11-10",
+      "customer_id": "C018"
     },
     {
       "id": "T019",
       "subject": "Password reset email missing",
       "body": "I requested a password reset email twice but nothing arrives. I am still logged in on my phone, so it is not urgent.",
-      "received_at": "2026-11-11"
+      "received_at": "2026-11-11",
+      "customer_id": "C019"
     },
     {
       "id": "T020",
       "subject": "Service insatisfaisant",
       "body": "Bonjour, je suis insatisfait du service reçu hier. L'employé n'était pas poli et n'a pas voulu m'aider.",
-      "received_at": "2026-11-11"
+      "received_at": "2026-11-11",
+      "customer_id": "C020"
     },
     {
       "id": "T021",
       "subject": "Nice website",
       "body": "Just wanted to say your new website is easy to use. Thank you!",
-      "received_at": "2026-11-11"
+      "received_at": "2026-11-11",
+      "customer_id": "C021"
     },
     {
       "id": "T022",
       "subject": "Mon dossier",
       "body": "Bonjour, j'ai un problème avec mon dossier. Merci de me rappeler.",
-      "received_at": "2026-11-12"
+      "received_at": "2026-11-12",
+      "customer_id": "C022"
     },
     {
       "id": "T023",
       "subject": "Package delayed",
       "body": "My package was due on Monday and the tracking page has not changed in three days.",
-      "received_at": "2026-11-12"
+      "received_at": "2026-11-12",
+      "customer_id": "C023"
     },
     {
       "id": "T024",
       "subject": "Changer mon courriel",
       "body": "Bonjour, je voudrais changer l'adresse courriel de mon compte. Comment dois-je faire?",
-      "received_at": "2026-11-12"
+      "received_at": "2026-11-12",
+      "customer_id": "C024"
     },
     {
       "id": "T025",
       "subject": "Receipt request",
       "body": "Could you send me a copy of the receipt for my last order? I need it for my records. Thank you.",
-      "received_at": "2026-11-13"
+      "received_at": "2026-11-13",
+      "customer_id": "C025"
     },
     {
       "id": "T026",
       "subject": "Pièce manquante",
       "body": "Bonjour, il manque une vis dans la boîte de montage de mon meuble. Pouvez-vous m'en envoyer une?",
-      "received_at": "2026-11-13"
+      "received_at": "2026-11-13",
+      "customer_id": "C026"
     },
     {
       "id": "T027",
       "subject": "Rude agent",
       "body": "The agent I spoke to yesterday was rude and hung up on me. I would like someone to review the call.",
-      "received_at": "2026-11-13"
+      "received_at": "2026-11-13",
+      "customer_id": "C027"
     },
     {
       "id": "T028",
       "subject": "Colis jamais arrivé",
       "body": "Bonjour, mon colis a été expédié le 28 octobre et il n'est toujours pas arrivé. Cela fait plus de trois semaines.",
-      "received_at": "2026-11-14"
+      "received_at": "2026-11-14",
+      "customer_id": "C028"
     },
     {
       "id": "T029",
       "subject": "App crashes",
       "body": "The app crashes every time I open my cart. I have reinstalled it and the problem is still there.",
-      "received_at": "2026-11-14"
+      "received_at": "2026-11-14",
+      "customer_id": "C029"
     },
     {
       "id": "T030",
       "subject": "Frais inconnus",
       "body": "Bonjour, il y a des frais de 14,99 dollars sur mon relevé que je ne reconnais pas. Pouvez-vous me dire à quoi ils correspondent?",
-      "received_at": "2026-11-14"
+      "received_at": "2026-11-14",
+      "customer_id": "C030"
     }
   ],
+  "records": {
+    "note": "Synthetic records. No real customers.",
+    "customers": [
+      {
+        "id": "C001",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C002",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C003",
+        "language": "EN",
+        "account_status": "locked",
+        "locked_since": "2026-11-02",
+        "failed_logins": 5
+      },
+      {
+        "id": "C004",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C005",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C006",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C007",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C008",
+        "language": "FR",
+        "account_status": "locked",
+        "locked_since": "2026-11-05",
+        "failed_logins": 5
+      },
+      {
+        "id": "C009",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C010",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C011",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C012",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C013",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C014",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C015",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C016",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C017",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C018",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C019",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C020",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C021",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C022",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C023",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C024",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C025",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C027",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C028",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C029",
+        "language": "EN",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      },
+      {
+        "id": "C030",
+        "language": "FR",
+        "account_status": "active",
+        "locked_since": null,
+        "failed_logins": 0
+      }
+    ],
+    "orders": [
+      {
+        "id": 5521,
+        "customer_id": "C001",
+        "placed_at": "2026-10-30",
+        "total": 64.5,
+        "status": "shipped",
+        "shipped_at": "2026-10-31",
+        "carrier": "Northline",
+        "tracking_status": "in_transit",
+        "tracking_last_update": "2026-11-01",
+        "expected_at": "2026-11-04"
+      },
+      {
+        "id": 7340,
+        "customer_id": "C002",
+        "placed_at": "2026-10-28",
+        "total": 89.0,
+        "status": "shipped",
+        "shipped_at": "2026-10-30",
+        "carrier": "Northline",
+        "tracking_status": "in_transit",
+        "tracking_last_update": "2026-11-01",
+        "expected_at": "2026-11-03"
+      },
+      {
+        "id": 6650,
+        "customer_id": "C004",
+        "placed_at": "2026-11-02",
+        "total": 54.0,
+        "status": "delivered",
+        "shipped_at": "2026-11-02",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-03",
+        "expected_at": "2026-11-04"
+      },
+      {
+        "id": 7011,
+        "customer_id": "C005",
+        "placed_at": "2026-10-18",
+        "total": 142.0,
+        "status": "shipped",
+        "shipped_at": "2026-10-20",
+        "carrier": "Northline",
+        "tracking_status": "no_update",
+        "tracking_last_update": "2026-10-24",
+        "expected_at": "2026-10-27"
+      },
+      {
+        "id": 7120,
+        "customer_id": "C006",
+        "placed_at": "2026-10-30",
+        "total": 189.0,
+        "status": "delivered",
+        "shipped_at": "2026-11-01",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-03",
+        "expected_at": "2026-11-04"
+      },
+      {
+        "id": 7203,
+        "customer_id": "C009",
+        "placed_at": "2026-11-02",
+        "total": 249.0,
+        "status": "delivered",
+        "shipped_at": "2026-11-03",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-05",
+        "expected_at": "2026-11-06"
+      },
+      {
+        "id": 7388,
+        "customer_id": "C012",
+        "placed_at": "2026-11-03",
+        "total": 73.4,
+        "status": "delivered",
+        "shipped_at": "2026-11-04",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-07",
+        "expected_at": "2026-11-07"
+      },
+      {
+        "id": 6409,
+        "customer_id": "C013",
+        "placed_at": "2026-11-01",
+        "total": 120.0,
+        "status": "delivered",
+        "shipped_at": "2026-11-02",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-05",
+        "expected_at": "2026-11-06"
+      },
+      {
+        "id": 6107,
+        "customer_id": "C015",
+        "placed_at": "2026-11-08",
+        "total": 75.2,
+        "status": "processing",
+        "shipped_at": null,
+        "carrier": null,
+        "tracking_status": "none",
+        "tracking_last_update": null,
+        "expected_at": "2026-11-13"
+      },
+      {
+        "id": 8812,
+        "customer_id": "C016",
+        "placed_at": "2026-11-01",
+        "total": 112.3,
+        "status": "shipped",
+        "shipped_at": "2026-11-02",
+        "carrier": "Northline",
+        "tracking_status": "in_transit",
+        "tracking_last_update": "2026-11-05",
+        "expected_at": "2026-11-08"
+      },
+      {
+        "id": 7455,
+        "customer_id": "C017",
+        "placed_at": "2026-11-02",
+        "total": 96.0,
+        "status": "shipped",
+        "shipped_at": "2026-11-04",
+        "carrier": "Northline",
+        "tracking_status": "in_transit",
+        "tracking_last_update": "2026-11-06",
+        "expected_at": "2026-11-09"
+      },
+      {
+        "id": 7512,
+        "customer_id": "C023",
+        "placed_at": "2026-11-03",
+        "total": 58.9,
+        "status": "shipped",
+        "shipped_at": "2026-11-05",
+        "carrier": "Northline",
+        "tracking_status": "no_update",
+        "tracking_last_update": "2026-11-09",
+        "expected_at": "2026-11-09"
+      },
+      {
+        "id": 7030,
+        "customer_id": "C025",
+        "placed_at": "2026-10-25",
+        "total": 39.99,
+        "status": "delivered",
+        "shipped_at": "2026-10-26",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-10-29",
+        "expected_at": "2026-10-30"
+      },
+      {
+        "id": 7101,
+        "customer_id": "C028",
+        "placed_at": "2026-10-26",
+        "total": 134.5,
+        "status": "shipped",
+        "shipped_at": "2026-10-28",
+        "carrier": "Northline",
+        "tracking_status": "no_update",
+        "tracking_last_update": "2026-11-02",
+        "expected_at": "2026-11-04"
+      },
+      {
+        "id": 6520,
+        "customer_id": "C030",
+        "placed_at": "2026-11-03",
+        "total": 47.0,
+        "status": "delivered",
+        "shipped_at": "2026-11-04",
+        "carrier": "Northline",
+        "tracking_status": "delivered",
+        "tracking_last_update": "2026-11-06",
+        "expected_at": "2026-11-07"
+      }
+    ],
+    "charges": [
+      {
+        "id": "CH01",
+        "order_id": 5521,
+        "customer_id": "C001",
+        "amount": 64.5,
+        "charged_at": "2026-11-01",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH02",
+        "order_id": 5521,
+        "customer_id": "C001",
+        "amount": 64.5,
+        "charged_at": "2026-11-01",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH03",
+        "order_id": 7340,
+        "customer_id": "C002",
+        "amount": 89.0,
+        "charged_at": "2026-10-28",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH04",
+        "order_id": 6650,
+        "customer_id": "C004",
+        "amount": 54.0,
+        "charged_at": "2026-11-02",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH05",
+        "order_id": 6650,
+        "customer_id": "C004",
+        "amount": 6.5,
+        "charged_at": "2026-11-02",
+        "kind": "service_fee",
+        "description": "Frais de service"
+      },
+      {
+        "id": "CH06",
+        "order_id": 6409,
+        "customer_id": "C013",
+        "amount": 120.0,
+        "charged_at": "2026-11-01",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH07",
+        "order_id": 6409,
+        "customer_id": "C013",
+        "amount": 14.99,
+        "charged_at": "2026-11-03",
+        "kind": "service_fee",
+        "description": "Express handling fee"
+      },
+      {
+        "id": "CH08",
+        "order_id": 8812,
+        "customer_id": "C016",
+        "amount": 112.3,
+        "charged_at": "2026-11-03",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH09",
+        "order_id": 8812,
+        "customer_id": "C016",
+        "amount": 112.3,
+        "charged_at": "2026-11-03",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH10",
+        "order_id": 7030,
+        "customer_id": "C025",
+        "amount": 39.99,
+        "charged_at": "2026-10-25",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH11",
+        "order_id": 6520,
+        "customer_id": "C030",
+        "amount": 47.0,
+        "charged_at": "2026-11-03",
+        "kind": "payment",
+        "description": "Order payment"
+      },
+      {
+        "id": "CH12",
+        "order_id": 6520,
+        "customer_id": "C030",
+        "amount": 14.99,
+        "charged_at": "2026-11-05",
+        "kind": "service_fee",
+        "description": "Frais de traitement accéléré"
+      }
+    ],
+    "policies": [
+      {
+        "id": "P_late_delivery_EN",
+        "topic": "late_delivery",
+        "language": "EN",
+        "title": "Late or missing package",
+        "body": "Tracking updates can take up to 2 business days to appear. If a package has not arrived 14 days after it shipped, the team opens a trace request with the carrier."
+      },
+      {
+        "id": "P_late_delivery_FR",
+        "topic": "late_delivery",
+        "language": "FR",
+        "title": "Colis en retard ou introuvable",
+        "body": "Les mises à jour du suivi peuvent prendre jusqu'à 2 jours ouvrables. Si un colis n'est pas arrivé 14 jours après son expédition, l'équipe ouvre une demande de recherche auprès du transporteur."
+      },
+      {
+        "id": "P_double_charge_EN",
+        "topic": "double_charge",
+        "language": "EN",
+        "title": "Charged twice for one order",
+        "body": "A second charge on the same order is reviewed by the team, who compare the charge records. A pending charge can take 3 business days to clear."
+      },
+      {
+        "id": "P_double_charge_FR",
+        "topic": "double_charge",
+        "language": "FR",
+        "title": "Débité deux fois pour une commande",
+        "body": "Un second prélèvement sur la même commande est examiné par l'équipe, qui compare les relevés. Un prélèvement en attente peut prendre 3 jours ouvrables à disparaître."
+      },
+      {
+        "id": "P_billing_line_EN",
+        "topic": "billing_line",
+        "language": "EN",
+        "title": "Questions about an invoice line",
+        "body": "An invoice can include a service fee. The team explains each line on an invoice on request."
+      },
+      {
+        "id": "P_billing_line_FR",
+        "topic": "billing_line",
+        "language": "FR",
+        "title": "Questions sur une ligne de facture",
+        "body": "Une facture peut comprendre des frais de service. L'équipe explique chaque ligne d'une facture sur demande."
+      },
+      {
+        "id": "P_locked_account_EN",
+        "topic": "locked_account",
+        "language": "EN",
+        "title": "Locked account",
+        "body": "An account is locked after 5 failed login attempts. The team confirms who you are before unlocking it."
+      },
+      {
+        "id": "P_locked_account_FR",
+        "topic": "locked_account",
+        "language": "FR",
+        "title": "Compte bloqué",
+        "body": "Un compte est bloqué après 5 tentatives de connexion échouées. L'équipe confirme votre identité avant de le débloquer."
+      },
+      {
+        "id": "P_password_reset_EN",
+        "topic": "password_reset",
+        "language": "EN",
+        "title": "Password reset email",
+        "body": "The reset email goes to the address on the account. If it has not arrived after 10 minutes, check the spam folder."
+      },
+      {
+        "id": "P_password_reset_FR",
+        "topic": "password_reset",
+        "language": "FR",
+        "title": "Courriel de réinitialisation du mot de passe",
+        "body": "Le courriel de réinitialisation est envoyé à l'adresse du compte. S'il n'est pas arrivé après 10 minutes, vérifiez le dossier des courriels indésirables."
+      },
+      {
+        "id": "P_address_change_EN",
+        "topic": "address_change",
+        "language": "EN",
+        "title": "Changing a delivery address",
+        "body": "A delivery address can be changed only before an order ships. After it ships, the carrier handles any redirection."
+      },
+      {
+        "id": "P_address_change_FR",
+        "topic": "address_change",
+        "language": "FR",
+        "title": "Modifier une adresse de livraison",
+        "body": "Une adresse de livraison ne peut être modifiée qu'avant l'expédition de la commande. Après l'expédition, le transporteur s'occupe de toute redirection."
+      },
+      {
+        "id": "P_email_change_EN",
+        "topic": "email_change",
+        "language": "EN",
+        "title": "Changing the account email",
+        "body": "The email address on an account is changed in the account settings after the team confirms your identity."
+      },
+      {
+        "id": "P_email_change_FR",
+        "topic": "email_change",
+        "language": "FR",
+        "title": "Changer le courriel du compte",
+        "body": "L'adresse courriel d'un compte se change dans les paramètres du compte, après que l'équipe a confirmé votre identité."
+      },
+      {
+        "id": "P_receipt_EN",
+        "topic": "receipt",
+        "language": "EN",
+        "title": "Receipt copies",
+        "body": "A copy of the receipt is available for any paid order on request."
+      },
+      {
+        "id": "P_receipt_FR",
+        "topic": "receipt",
+        "language": "FR",
+        "title": "Copies de reçu",
+        "body": "Une copie du reçu est disponible sur demande pour toute commande payée."
+      },
+      {
+        "id": "P_holiday_hours_EN",
+        "topic": "holiday_hours",
+        "language": "EN",
+        "title": "Holiday hours",
+        "body": "Support is closed on December 25 and January 1. On December 24 and 31, support is open from 9 to 14."
+      },
+      {
+        "id": "P_holiday_hours_FR",
+        "topic": "holiday_hours",
+        "language": "FR",
+        "title": "Heures des fêtes",
+        "body": "Le soutien est fermé le 25 décembre et le 1er janvier. Les 24 et 31 décembre, le soutien est ouvert de 9 h à 14 h."
+      },
+      {
+        "id": "P_sunday_delivery_EN",
+        "topic": "sunday_delivery",
+        "language": "EN",
+        "title": "Sunday delivery",
+        "body": "Deliveries are made Monday to Saturday. There are no Sunday deliveries."
+      },
+      {
+        "id": "P_sunday_delivery_FR",
+        "topic": "sunday_delivery",
+        "language": "FR",
+        "title": "Livraison le dimanche",
+        "body": "Les livraisons ont lieu du lundi au samedi. Il n'y a pas de livraison le dimanche."
+      },
+      {
+        "id": "P_return_policy_EN",
+        "topic": "return_policy",
+        "language": "EN",
+        "title": "Returns",
+        "body": "Items can be returned within 30 days of delivery. The team reviews each return request."
+      },
+      {
+        "id": "P_return_policy_FR",
+        "topic": "return_policy",
+        "language": "FR",
+        "title": "Retours",
+        "body": "Les articles peuvent être retournés dans les 30 jours suivant la livraison. L'équipe examine chaque demande de retour."
+      },
+      {
+        "id": "P_product_defect_EN",
+        "topic": "product_defect",
+        "language": "EN",
+        "title": "Damaged or faulty items",
+        "body": "An item that arrives damaged or does not work is reviewed by the team, who may ask for photos."
+      },
+      {
+        "id": "P_product_defect_FR",
+        "topic": "product_defect",
+        "language": "FR",
+        "title": "Article endommagé ou défectueux",
+        "body": "Un article qui arrive endommagé ou qui ne fonctionne pas est examiné par l'équipe, qui peut demander des photos."
+      },
+      {
+        "id": "P_app_issue_EN",
+        "topic": "app_issue",
+        "language": "EN",
+        "title": "App problems",
+        "body": "App problems are reviewed by technical support, who may ask for the app version and the device model."
+      },
+      {
+        "id": "P_app_issue_FR",
+        "topic": "app_issue",
+        "language": "FR",
+        "title": "Problèmes avec l'application",
+        "body": "Les problèmes d'application sont examinés par le soutien technique, qui peut demander la version de l'application et le modèle de l'appareil."
+      },
+      {
+        "id": "P_complaint_EN",
+        "topic": "complaint",
+        "language": "EN",
+        "title": "Service complaints",
+        "body": "A service complaint is reviewed by a team lead, who may listen to the call record."
+      },
+      {
+        "id": "P_complaint_FR",
+        "topic": "complaint",
+        "language": "FR",
+        "title": "Plaintes sur le service",
+        "body": "Une plainte sur le service est examinée par un chef d'équipe, qui peut écouter l'enregistrement de l'appel."
+      },
+      {
+        "id": "P_general_EN",
+        "topic": "general",
+        "language": "EN",
+        "title": "General questions",
+        "body": "Questions that do not fit another topic are answered by the general support queue."
+      },
+      {
+        "id": "P_general_FR",
+        "topic": "general",
+        "language": "FR",
+        "title": "Questions générales",
+        "body": "Les questions qui ne correspondent à aucun autre sujet sont traitées par la file de soutien général."
+      }
+    ]
+  },
   "classify": {
     "T001": {
       "category": "billing",
@@ -535,36 +1277,36 @@
     }
   },
   "replies": {
-    "T001": "Hello, thank you for contacting us. We understand you were charged twice for order 5521 and we are sorry for the stress this causes. A member of our team will review the charges on your order and follow up with you. Kind regards, Customer Care Team",
-    "T002": "Bonjour, merci de nous avoir écrit. Nous comprenons que votre colis, attendu mardi, n'est toujours pas arrivé et nous sommes désolés de ce retard. Un membre de notre équipe vérifiera le suivi de votre envoi et reviendra vers vous. Cordialement, L'équipe du service à la clientèle",
-    "T003": "Hello, thank you for contacting us. We understand your account is locked and that you need access today. A member of our team will look into the lock on your account and contact you with the next steps. Kind regards, Customer Care Team",
-    "T004": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous souhaitez savoir à quoi correspondent les frais de service sur votre facture de novembre. Un membre de notre équipe examinera votre facture et vous expliquera cette ligne. Cordialement, L'équipe du service à la clientèle",
-    "T005": "Hello, thank you for contacting us. We understand your package, shipped on October 20, has still not arrived and we are sorry for the long wait. A member of our team will review your tracking details and follow up with you. Kind regards, Customer Care Team",
-    "T006": "Bonjour, merci de nous avoir écrit. Nous comprenons que l'appareil reçu la semaine dernière ne s'allume pas, même avec un autre câble. Un membre de notre équipe examinera votre situation et vous indiquera les prochaines étapes. Cordialement, L'équipe du service à la clientèle",
-    "T007": "Hello, thank you for contacting us. We are sorry to hear that you waited 40 minutes on the phone without getting the help you needed. A member of our team will review your experience and follow up with you. Kind regards, Customer Care Team",
-    "T008": "Bonjour, merci de nous avoir écrit. Nous comprenons que votre compte est bloqué et que vous avez besoin d'accéder à vos commandes aujourd'hui. Un membre de notre équipe examinera le blocage de votre compte et vous contactera avec les prochaines étapes. Cordialement, L'équipe du service à la clientèle",
-    "T009": "Hello, thank you for contacting us. We are sorry to hear that the screen of your item arrived cracked. A member of our team will review your request, and the photos you mentioned will be helpful when we follow up. Kind regards, Customer Care Team",
-    "T010": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous aimeriez savoir si nous livrons aussi le dimanche. Un membre de notre équipe vous répondra avec les renseignements sur nos jours de livraison. Cordialement, L'équipe du service à la clientèle",
-    "T011": "Hello, thank you for contacting us. We understand you would like to know our opening hours during the holidays. A member of our team will send you the holiday hours. Kind regards, Customer Care Team",
-    "T012": "Bonjour, merci de nous avoir écrit. Nous vous remercions de nous avoir signalé que la boîte de votre colis est arrivée abîmée. Un membre de notre équipe prendra note de votre signalement et vous contactera si une vérification est nécessaire. Cordialement, L'équipe du service à la clientèle",
-    "T013": "Hello, thank you for contacting us. We understand you received an invoice with a 14.99 dollar charge that you do not recognize. A member of our team will review the invoice and explain what the charge is for. Kind regards, Customer Care Team",
-    "T014": "Bonjour, merci de nous avoir écrit. Nous sommes désolés que vous ayez dû nous écrire une troisième fois sans recevoir de réponse. Un membre de notre équipe examinera personnellement votre dossier et communiquera avec vous. Cordialement, L'équipe du service à la clientèle",
-    "T015": "Hello, thank you for contacting us. We understand you would like to correct the apartment number on your order. A member of our team will check whether the address can still be updated and follow up with you. Kind regards, Customer Care Team",
-    "T016": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous avez été débité deux fois pour la commande 8812. Un membre de notre équipe examinera les montants prélevés et vous répondra. Cordialement, L'équipe du service à la clientèle",
-    "T017": "Hello, thank you for contacting us. We understand your package is late, your invoice looks wrong, and you have a question about our return policy. Because your message covers several topics, a member of our team will review it personally and follow up with you. Kind regards, Customer Care Team",
-    "T018": "Bonjour, merci de nous avoir écrit. Nous comprenons que l'application se ferme toute seule lorsque vous ouvrez votre panier, même après une réinstallation. Un membre de notre équipe examinera ce problème et vous indiquera les prochaines étapes. Cordialement, L'équipe du service à la clientèle",
-    "T019": "Hello, thank you for contacting us. We understand the password reset email has not arrived after two requests. A member of our team will look into it and follow up with you. Kind regards, Customer Care Team",
-    "T020": "Bonjour, merci de nous avoir écrit. Nous sommes désolés que le service reçu hier ne vous ait pas satisfait. Un membre de notre équipe examinera votre expérience et vous contactera. Cordialement, L'équipe du service à la clientèle",
+    "T001": "Hello, thank you for contacting us. Our records show two payments of 64.50 dollars on order 5521, both dated November 1. A member of our team will compare the two charges and follow up with you. A pending charge can take 3 business days to clear. Kind regards, Customer Care Team",
+    "T002": "Bonjour, merci de nous avoir écrit. Notre dossier indique que la commande 7340 a été expédiée le 30 octobre et que le suivi affiche toujours en transit. Les mises à jour du suivi peuvent prendre jusqu'à 2 jours ouvrables. Un membre de notre équipe vérifiera le suivi auprès du transporteur et reviendra vers vous. Cordialement, L'équipe du service à la clientèle",
+    "T003": "Hello, thank you for contacting us. Our records show your account has been locked since November 2, which happens after 5 failed login attempts. A member of our team will confirm who you are before unlocking it. We will contact you with the next steps. Kind regards, Customer Care Team",
+    "T004": "Bonjour, merci de nous avoir écrit. Notre dossier montre pour la commande 6650 un paiement de 54,00 dollars et des frais de service de 6,50 dollars, datés du 2 novembre. Une facture peut comprendre des frais de service. Un membre de notre équipe peut vous expliquer chaque ligne de votre facture. Cordialement, L'équipe du service à la clientèle",
+    "T005": "Hello, thank you for contacting us. Our records show order 7011 shipped on October 20 and that its tracking has not been updated since October 24. A package that has not arrived 14 days after shipping can be traced with the carrier, and your order is past that point. A member of our team will follow up with you about the next step. Kind regards, Customer Care Team",
+    "T006": "Bonjour, merci de nous avoir écrit. Notre dossier indique que la commande 7120 a été livrée le 3 novembre. Un appareil qui ne fonctionne pas est examiné par notre équipe, qui peut vous demander des photos. Un membre de notre équipe vous contactera pour la suite. Cordialement, L'équipe du service à la clientèle",
+    "T007": "Hello, thank you for contacting us. We are sorry to hear that you waited 40 minutes on the phone without getting the help you needed. A service complaint is reviewed by a team lead, who may listen to the call record. A member of our team will follow up with you. Kind regards, Customer Care Team",
+    "T008": "Bonjour, merci de nous avoir écrit. Notre dossier indique que votre compte est bloqué depuis le 5 novembre, ce qui arrive après 5 tentatives de connexion échouées. Un membre de notre équipe confirmera votre identité avant de le débloquer. Nous vous contacterons avec les prochaines étapes. Cordialement, L'équipe du service à la clientèle",
+    "T009": "Hello, thank you for contacting us. Our records show order 7203 was delivered on November 5. An item that arrives damaged is reviewed by our team, who may ask for photos, so the photos you mentioned will be helpful. A member of our team will follow up with you. Kind regards, Customer Care Team",
+    "T010": "Bonjour, merci de nous avoir écrit. Nous vous remercions de votre question. Les livraisons ont lieu du lundi au samedi, et il n'y a pas de livraison le dimanche. N'hésitez pas à nous écrire si vous avez d'autres questions. Cordialement, L'équipe du service à la clientèle",
+    "T011": "Hello, thank you for contacting us. Support is closed on December 25 and January 1. On December 24 and 31, support is open from 9 to 14. Please write to us again if you have another question. Kind regards, Customer Care Team",
+    "T012": "Bonjour, merci de nous avoir écrit. Notre dossier indique que la commande 7388 a été livrée le 7 novembre. Nous vous remercions de nous avoir signalé que la boîte est arrivée abîmée. Un membre de notre équipe prendra note de votre signalement et vous contactera si une vérification est nécessaire. Cordialement, L'équipe du service à la clientèle",
+    "T013": "Hello, thank you for contacting us. Our records show a service fee of 14.99 dollars on order 6409, dated November 3, listed as an express handling fee. The payment for the order itself was 120.00 dollars. A member of our team can explain every line of the invoice and will follow up with you. Kind regards, Customer Care Team",
+    "T014": "Bonjour, merci de nous avoir écrit. Nous sommes désolés que vous ayez dû nous écrire une troisième fois sans recevoir de réponse. Votre dossier sera examiné personnellement par un chef d'équipe. Un membre de notre équipe communiquera avec vous. Cordialement, L'équipe du service à la clientèle",
+    "T015": "Hello, thank you for contacting us. Our records show order 6107 has not shipped yet, and an address can be changed only before an order ships. A member of our team will check the order and follow up with you about the apartment number. Kind regards, Customer Care Team",
+    "T016": "Bonjour, merci de nous avoir écrit. Notre dossier montre deux paiements de 112,30 dollars pour la commande 8812, tous deux datés du 3 novembre. Un membre de notre équipe comparera les relevés et vous répondra. Un prélèvement en attente peut prendre 3 jours ouvrables à disparaître. Cordialement, L'équipe du service à la clientèle",
+    "T017": "Hello, thank you for contacting us. Our records show order 7455 shipped on November 4 and is in transit. Items can be returned within 30 days of delivery. Because your message covers several topics, a member of our team will review it personally and follow up with you. Kind regards, Customer Care Team",
+    "T018": "Bonjour, merci de nous avoir écrit. Nous comprenons que l'application se ferme toute seule lorsque vous ouvrez votre panier, même après une réinstallation. Nos spécialistes peuvent vous demander la version de l'application et le modèle de votre appareil. Un membre de notre équipe vous contactera avec les prochaines étapes. Cordialement, L'équipe du service à la clientèle",
+    "T019": "Hello, thank you for contacting us. The reset email goes to the address on your account. If it has not arrived after 10 minutes, please check your spam folder. A member of our team will follow up with you if it still does not arrive. Kind regards, Customer Care Team",
+    "T020": "Bonjour, merci de nous avoir écrit. Nous sommes désolés que le service reçu hier ne vous ait pas satisfait. Une plainte sur le service est examinée par un chef d'équipe. Un membre de notre équipe vous contactera. Cordialement, L'équipe du service à la clientèle",
     "T021": "Hello, thank you for contacting us. We are glad to hear that you find our new website easy to use. We have shared your kind feedback with our team. Kind regards, Customer Care Team",
     "T022": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous avez un problème avec votre dossier et que vous aimeriez être rappelé. Un membre de notre équipe examinera votre message personnellement et vous contactera. Cordialement, L'équipe du service à la clientèle",
-    "T023": "Hello, thank you for contacting us. We understand your package was due on Monday and the tracking page has not changed in three days. A member of our team will review your tracking details and follow up with you. Kind regards, Customer Care Team",
-    "T024": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous souhaitez changer l'adresse courriel de votre compte. Un membre de notre équipe vous expliquera la marche à suivre. Cordialement, L'équipe du service à la clientèle",
-    "T025": "Hello, thank you for contacting us. We understand you need a copy of the receipt for your last order. A member of our team will send you the receipt. Kind regards, Customer Care Team",
-    "T026": "Bonjour, merci de nous avoir écrit. Nous sommes désolés qu'il manque une vis dans la boîte de montage de votre meuble. Un membre de notre équipe examinera votre demande et vous contactera. Cordialement, L'équipe du service à la clientèle",
-    "T027": "Hello, thank you for contacting us. We are sorry to hear that your call with our agent yesterday went poorly. A member of our team will review the call and follow up with you. Kind regards, Customer Care Team",
-    "T028": "Bonjour, merci de nous avoir écrit. Nous comprenons que votre colis, expédié le 28 octobre, n'est toujours pas arrivé et nous sommes désolés de cette attente. Un membre de notre équipe examinera le suivi de votre envoi et vous contactera. Cordialement, L'équipe du service à la clientèle",
-    "T029": "Hello, thank you for contacting us. We understand the app crashes every time you open your cart, even after reinstalling it. A member of our team will look into the problem and follow up with you. Kind regards, Customer Care Team",
-    "T030": "Bonjour, merci de nous avoir écrit. Nous comprenons que vous ne reconnaissez pas des frais de 14,99 dollars sur votre relevé. Un membre de notre équipe examinera votre relevé et vous expliquera à quoi ces frais correspondent. Cordialement, L'équipe du service à la clientèle"
+    "T023": "Hello, thank you for contacting us. Our records show order 7512 shipped on November 5 and that its tracking was last updated on November 9. Tracking updates can take up to 2 business days to appear. A member of our team will review the tracking details and follow up with you. Kind regards, Customer Care Team",
+    "T024": "Bonjour, merci de nous avoir écrit. L'adresse courriel d'un compte se change dans les paramètres du compte, après que nous avons confirmé votre identité. Un membre de notre équipe vous guidera dans cette démarche. Cordialement, L'équipe du service à la clientèle",
+    "T025": "Hello, thank you for contacting us. Our records show order 7030 was paid on October 25 for 39.99 dollars, and a copy of the receipt is available for any paid order. A member of our team will send you the receipt. Kind regards, Customer Care Team",
+    "T026": "Bonjour, merci de nous avoir écrit. Nous n'avons pas pu associer votre message à un dossier client. Un membre de notre équipe vous contactera pour confirmer vos coordonnées avant d'examiner votre demande de vis manquante. Cordialement, L'équipe du service à la clientèle",
+    "T027": "Hello, thank you for contacting us. We are sorry to hear that your call with our agent yesterday went poorly. A service complaint is reviewed by a team lead, who may listen to the call record. A member of our team will follow up with you. Kind regards, Customer Care Team",
+    "T028": "Bonjour, merci de nous avoir écrit. Notre dossier indique que la commande 7101 a été expédiée le 28 octobre et que le suivi n'a pas été mis à jour depuis le 2 novembre. Un colis qui n'est pas arrivé 14 jours après son expédition peut faire l'objet d'une recherche auprès du transporteur, et votre commande a dépassé ce délai. Un membre de notre équipe vous contactera. Cordialement, L'équipe du service à la clientèle",
+    "T029": "Hello, thank you for contacting us. We understand the app crashes every time you open your cart, even after reinstalling it. Our specialists may ask for the app version and the device model. A member of our team will follow up with you. Kind regards, Customer Care Team",
+    "T030": "Bonjour, merci de nous avoir écrit. Notre dossier montre des frais de traitement accéléré de 14,99 dollars sur la commande 6520, datés du 5 novembre. Le paiement de la commande elle-même était de 47,00 dollars. Un membre de notre équipe peut vous expliquer chaque ligne de votre relevé. Cordialement, L'équipe du service à la clientèle"
   },
   "python_audit": {
     "run_id": "2026-11-15_01",
@@ -698,14 +1440,15 @@
     "verdict": "PASS"
   },
   "contexts": {
-    "01_intake": "# 01_intake\n\nDesk 1. A ticket arrives. This desk checks it is complete and notices the language. It does no thinking about the problem.\n\n## 1. Task\nRead every ticket in `data/sample_tickets.json`. Keep the ones that are complete. Tag each kept ticket as `EN` or `FR`. List the rejected ones by id.\n\n## 2. Inputs (what arrives)\nOne file: `data/sample_tickets.json`. Each ticket MUST have these 4 fields:\n\n| Field | Meaning | Example |\n|---|---|---|\n| `id` | Unique ticket id, format `T` plus 3 digits | `T014` |\n| `subject` | Short title, 1 to 120 characters | `Colis introuvable` |\n| `body` | The message, 10 to 2000 characters | `Mon colis n'est jamais arrivé...` |\n| `received_at` | Date in the form `YYYY-MM-DD` | `2026-11-02` |\n\n## 3. Skills used\nNone. Checking fields and detecting a language are exact jobs, so scripts do them. A skill would only add guessing.\n\n## 4. Scripts used\n| Script | What it checks | Prints |\n|---|---|---|\n| `scripts/validate_ticket.py` | All 4 fields exist, `id` format is right, ids are unique, lengths are in range, date format is right | `VALID` or `REJECTED <id>: <reason>` per ticket |\n| `scripts/detect_language.py` | Counts common French words (`le`, `la`, `je`, `mon`, `pas`, `est`, `vous`, accents) against common English words in the `subject` and `body`. More French hits gives `FR`, otherwise `EN`. A tie gives `EN` and sets `language_confidence` to `low` | The tag and confidence per ticket |\n| `scripts/count_check.py 01` | Tickets in equals tickets kept plus tickets rejected | `COUNT OK 30 = 30 + 0` or `COUNT FAIL` |\n\n## 5. Done when\n1. `count_check.py 01` prints `COUNT OK`.\n2. Every ticket in `runs/<run_id>/01_intake.json` has a `language` of `EN` or `FR` and status `intake_ok`.\n3. Every rejected ticket is listed in `runs/<run_id>/01_rejected.json` with its reason.\n\n## 6. Do not\n- MUST NOT change the text of a ticket. Not a typo, not a space.\n- MUST NOT guess a missing field. A ticket with a missing field is rejected.\n- MUST NOT call a skill or ask the AI to decide the language. The script decides.\n\n## 7. Next stage\n`02_classify`. Hand over `runs/<run_id>/01_intake.json`.\n",
+    "01_intake": "# 01_intake\n\nDesk 1. A ticket arrives. This desk checks it is complete and notices the language. It does no thinking about the problem.\n\n## 1. Task\nRead every ticket in `data/sample_tickets.json`. Keep the ones that are complete. Tag each kept ticket as `EN` or `FR`. List the rejected ones by id.\n\n## 2. Inputs (what arrives)\nOne file: `data/sample_tickets.json`. Each ticket MUST have these 4 fields:\n\n| Field | Meaning | Example |\n|---|---|---|\n| `id` | Unique ticket id, format `T` plus 3 digits | `T014` |\n| `subject` | Short title, 1 to 120 characters | `Colis introuvable` |\n| `body` | The message, 10 to 2000 characters | `Mon colis n'est jamais arrivé...` |\n| `received_at` | Date in the form `YYYY-MM-DD` | `2026-11-02` |\n\n## 3. Skills used\nNone. Checking fields and detecting a language are exact jobs, so scripts do them. A skill would only add guessing.\n\n## 4. Scripts used\n| Script | What it checks | Prints |\n|---|---|---|\n| `scripts/validate_ticket.py` | All 4 fields exist, `id` format is right, ids are unique, lengths are in range, date format is right | `VALID` or `REJECTED <id>: <reason>` per ticket |\n| `scripts/detect_language.py` | Counts common French words (`le`, `la`, `je`, `mon`, `pas`, `est`, `vous`, accents) against common English words in the `subject` and `body`. More French hits gives `FR`, otherwise `EN`. A tie gives `EN` and sets `language_confidence` to `low` | The tag and confidence per ticket |\n| `scripts/run_intake.py <run_id>` | Runs the two scripts above on `00_input.json` and writes `01_intake.json` (kept tickets with `language` and `language_confidence`) and `01_rejected.json` (rejected tickets with reasons) | The count line, for example `COUNT OK 30 = 30 + 0` |\n| `scripts/count_check.py 01` | Tickets in equals tickets kept plus tickets rejected | `COUNT OK 30 = 30 + 0` or `COUNT FAIL` |\n\n## 5. Done when\n1. `count_check.py 01` prints `COUNT OK`.\n2. Every ticket in `runs/<run_id>/01_intake.json` has a `language` of `EN` or `FR` and status `intake_ok`.\n3. Every rejected ticket is listed in `runs/<run_id>/01_rejected.json` with its reason.\n\n## 6. Do not\n- MUST NOT change the text of a ticket. Not a typo, not a space.\n- MUST NOT guess a missing field. A ticket with a missing field is rejected.\n- MUST NOT call a skill or ask the AI to decide the language. The script decides.\n\n## 7. Next stage\n`02_classify`. Hand over `runs/<run_id>/01_intake.json`.\n",
     "02_classify": "# 02_classify\n\nDesk 2. The first thinking desk. Decide what kind of problem this is and how urgent it is. A script then checks the answer is allowed.\n\n## 1. Task\nFor each ticket, make two decisions: a category and a priority. Also flag any ticket the skill is unsure about.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/01_intake.json`. Each ticket has `id`, `subject`, `body`, `received_at`, `language`.\n\n## 3. Skills used\n`skills/triage-ticket/SKILL.md`. It reads the ticket and decides:\n- `category`: one of 6 (`billing`, `delivery`, `account_access`, `product_issue`, `complaint`, `other`)\n- `priority`: `P1`, `P2` or `P3`\n- `needs_human`: `true` or `false`\n- `reason`: one sentence in English, so a reviewer can read why, even when the ticket is French\n\nThis is judgment, not counting. Two tickets can use different words for the same problem, so a person-like reading is needed.\n\n## 4. Scripts used\n| Script | What it checks | Prints |\n|---|---|---|\n| `scripts/check_classification.py` | `category` is in the 6 allowed, `priority` is in the 3 allowed, `needs_human` is true or false, `reason` is not empty, and every `id` matches an intake ticket | `OK` or `BAD <id>: <reason>` per ticket |\n| `scripts/count_check.py 02` | Tickets in equals tickets out | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\n## 5. Done when\n1. `check_classification.py` prints no `BAD` line.\n2. `count_check.py 02` prints `COUNT OK`.\n3. `runs/<run_id>/02_classify.json` exists and every ticket has status `classified`.\n\n## 6. Do not\n- MUST NOT invent a new category or priority.\n- MUST NOT leave a ticket without a category. When unsure, use `other`, priority `P2`, and set `needs_human` to `true`.\n- MUST NOT translate or rewrite the ticket. Only add the four new fields.\n- MUST NOT run the checking script on its own output and then say \"looks fine\". The script's printed result is the answer.\n\n## 7. Next stage\n`03_route`. Hand over `runs/<run_id>/02_classify.json`.\n",
-    "03_route": "# 03_route\n\nDesk 3. Send each ticket to the right team. This is a lookup, not thinking, so a table does it and no AI is needed.\n\n## 1. Task\nFor each ticket, look up its `category` in `data/routing_table.json` and write the matching team. Carry the priority forward so the team can see urgent work first.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/02_classify.json`.\n\n## 3. Skills used\nNone. The same category must always go to the same team. A table gives the same answer every time. A skill could drift.\n\n## 4. Scripts used\n| Script | What it does | Prints |\n|---|---|---|\n| `scripts/route_ticket.py` | Looks up each category in `data/routing_table.json` and writes `team` | `ROUTED <id> -> <team>` per ticket |\n| `scripts/count_check.py 03` | Tickets in equals tickets out, and every ticket has exactly one team | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\nThe table (master copy is `data/routing_table.json`):\n\n| Category | Team |\n|---|---|\n| `billing` | Billing Team |\n| `delivery` | Delivery Support |\n| `account_access` | Account Security |\n| `product_issue` | Technical Support |\n| `complaint` | Customer Care Lead |\n| `other` | General Support Queue |\n\n## 5. Done when\n1. Every ticket has exactly one `team` from the table.\n2. `count_check.py 03` prints `COUNT OK`.\n3. `runs/<run_id>/03_route.json` exists and every ticket has status `routed`.\n4. Tickets with priority `P1` are marked `urgent: true`. All others are `urgent: false`.\n\n## 6. Do not\n- MUST NOT guess a team. If a category is not in the table, stop and report the ticket id.\n- MUST NOT send a ticket to two teams.\n- MUST NOT change `category` or `priority`. If they look wrong, report it. Fixing them belongs to stage 2.\n\n## 7. Next stage\n`04_reply`. Hand over `runs/<run_id>/03_route.json`.\n",
-    "04_reply": "# 04_reply\n\nDesk 4. Write a DRAFT reply in the customer's own language. A person approves it later. This is where the human gate begins.\n\n## 1. Task\nFor each ticket, write one draft reply. English tickets get English drafts. French tickets get French drafts. Set the status to `waiting_for_approval`. Do not send anything.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/03_route.json`. Each ticket has `id`, `subject`, `body`, `language`, `category`, `priority`, `team`, `needs_human`.\n\n## 3. Skills used\n`skills/draft-reply/SKILL.md`. It writes the draft: 3 to 5 sentences, polite, one clear next step, no promises. Writing a good message in two languages is judgment, so a skill does it.\n\n## 4. Scripts used\n| Script | What it checks | Prints |\n|---|---|---|\n| `scripts/check_reply.py` | Draft is not empty and is 3 to 5 sentences. Draft language matches the ticket `language` (same French versus English word count method as stage 1). Draft contains none of the banned promise phrases in `data/categories.json`. Status is `waiting_for_approval`. | `OK` or `BAD <id>: <reason>` per ticket |\n| `scripts/count_check.py 04` | Tickets in equals drafts out | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\n## 5. Done when\n1. `check_reply.py` prints no `BAD` line.\n2. `count_check.py 04` prints `COUNT OK`.\n3. `runs/<run_id>/04_reply.json` has one draft per ticket, each with status `waiting_for_approval`.\n\n## 6. Do not\n- MUST NOT send, email, post or export anything. This stage has no sending tool.\n- MUST NOT promise a refund, a delivery date, compensation, or a time limit such as \"within 24 hours\".\n- MUST NOT mix languages inside one draft. A French ticket gets all French.\n- MUST NOT mention internal things: team names, priority labels, category names.\n- MUST NOT mark a draft `approved`. Only a person does that.\n\n## 7. Next stage\n`05_audit`. Hand over `runs/<run_id>/04_reply.json`.\n",
-    "05_audit": "# 05_audit\n\nDesk 5. The teacher who checks the homework. A script samples tickets from the whole run and says PASS or FAIL. The AI does not grade itself.\n\n## 1. Task\nPick 20 tickets from the run. Check each one end to end across all four stage files. Print PASS or FAIL. Then stop and wait for a person.\n\n## 2. Inputs (what arrives)\nAll four files in `runs/<run_id>/`: `01_intake.json`, `02_classify.json`, `03_route.json`, `04_reply.json`.\n\n## 3. Skills used\nNone. If the same AI that wrote the replies also judged them, it would mark its own homework. A script with fixed rules is fair.\n\n## 4. Scripts used\n| Script | What it does | Prints |\n|---|---|---|\n| `scripts/audit_sample.py` | Picks 20 of 30 tickets using the fixed seed `42`, so a re-run checks the same 20. For each, runs 7 checks (below). | One line per ticket, then `AUDIT PASS 20/20` or `AUDIT FAIL 17/20` with the failing ids and the stage to fix |\n| `scripts/export_approved.py` | After a person marks drafts `approved`, writes only those to `runs/<run_id>/outbox.json`. It does not send. | `EXPORTED <n> drafts` |\n\nThe 7 checks per sampled ticket:\n1. Language tag is `EN` or `FR`.\n2. Category is in the allowed 6.\n3. Priority is in the allowed 3.\n4. Team matches the routing table for that category.\n5. Draft language equals ticket language.\n6. Draft has no banned promise phrase.\n7. Draft status is `waiting_for_approval`.\n\n## 5. Done when\n`audit_sample.py` prints `AUDIT PASS 20/20`. PASS needs all 20. The checks are exact rules, so 19 of 20 means a real bug, not noise.\n(Review note for Josh: 20 of 20 is my choice. Trove used 95 percent because flyers need human comparison. Change it if you disagree.)\n\n## 6. Do not\n- MUST NOT hide a failure or reword it as a pass.\n- MUST NOT re-run until it passes without fixing the cause.\n- MUST NOT change the seed to get an easier sample.\n- MUST NOT export or send drafts that a person has not approved.\n\n## 7. Next stage\nThere is no stage 6. After PASS, a person reads the drafts and marks each `approved` or `returned`.\n- `approved` drafts: run `export_approved.py`, then a person sends them.\n- `returned` drafts: go back to `04_reply` for those tickets only.\nAfter FAIL: go to the stage named in the failure line, fix, and re-run from that stage to 5.\n"
+    "03_route": "# 03_route\n\nDesk 3. Send each ticket to the right team. This is a lookup, not thinking, so a table does it and no AI is needed.\n\n## 1. Task\nFor each ticket, look up its `category` in `data/routing_table.json` and write the matching team. Carry the priority forward so the team can see urgent work first.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/02_classify.json`.\n\n## 3. Skills used\nNone. The same category must always go to the same team. A table gives the same answer every time. A skill could drift.\n\n## 4. Scripts used\n| Script | What it does | Prints |\n|---|---|---|\n| `scripts/route_ticket.py` | Looks up each category in `data/routing_table.json` and writes `team` | `ROUTED <id> -> <team>` per ticket |\n| `scripts/count_check.py 03` | Tickets in equals tickets out, and every ticket has exactly one team | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\nThe table (master copy is `data/routing_table.json`):\n\n| Category | Team |\n|---|---|\n| `billing` | Billing Team |\n| `delivery` | Delivery Support |\n| `account_access` | Account Security |\n| `product_issue` | Technical Support |\n| `complaint` | Customer Care Lead |\n| `other` | General Support Queue |\n\n## 5. Done when\n1. Every ticket has exactly one `team` from the table.\n2. `count_check.py 03` prints `COUNT OK`.\n3. `runs/<run_id>/03_route.json` exists and every ticket has status `routed`.\n4. Tickets with priority `P1` are marked `urgent: true`. All others are `urgent: false`.\n\n## 6. Do not\n- MUST NOT guess a team. If a category is not in the table, stop and report the ticket id.\n- MUST NOT send a ticket to two teams.\n- MUST NOT change `category` or `priority`. If they look wrong, report it. Fixing them belongs to stage 2.\n\n## 7. Next stage\n`04_lookup`. Hand over `runs/<run_id>/03_route.json`.\n",
+    "04_lookup": "# 04_lookup\n\nDesk 4. The filing cabinet. Find what the company's records say about this customer, this order and this topic, before anyone writes a reply. No AI is involved, because finding a record is an exact job.\n\n## 1. Task\nFor each routed ticket, look up the customer, the order it is about, that order's charges, and the one policy article that fits. Save what was found next to the ticket. If there is no customer record, say so and flag the ticket for a person.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/03_route.json` and the records in `data/records.json` (customers, orders, charges, policy articles). The ticket carries a `customer_id`. An order number written in the ticket text is used first. If the ticket names no order, the customer's most recent order is used for billing, delivery, product and other tickets.\n\n## 3. Skills used\nNone. A script does the lookup with a SQLite database built from `data/records.json`. To use a real company database, replace the records file or point `scripts/records.py` at the real tables. The rest of the workspace does not change.\n\n## 4. Scripts used\n| Script | What it does | Prints |\n|---|---|---|\n| `scripts/lookup_records.py <run_id>` | Looks up each ticket and writes `facts` (customer, order, charges, policy) and `lookup_status` to `04_lookup.json` | One line per ticket: `found`, `partial` or `not_found`, with the order and charge counts |\n| `scripts/count_check.py 04` | Tickets in equals tickets out, and every ticket has a lookup result | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\n`lookup_status` values: `found` (customer and any order needed), `partial` (billing or delivery ticket, customer found, no order), `not_found` (no customer record, so `needs_human` becomes `true`).\n\n## 5. Done when\n1. `lookup_records.py` ran without error.\n2. `count_check.py 04` prints `COUNT OK`.\n3. `runs/<run_id>/04_lookup.json` has a `facts` object for every ticket.\n\n## 6. Do not\n- MUST NOT guess a missing fact. If a record is missing, the status says so.\n- MUST NOT change `category`, `priority` or `team`.\n- MUST NOT write any text for the customer. Writing starts in stage 5.\n- MUST NOT use real customer data. The records are synthetic.\n\n## 7. Next stage\n`05_reply`. Hand over `runs/<run_id>/04_lookup.json`.\n",
+    "05_reply": "# 05_reply\n\nDesk 5. Write a DRAFT reply in the customer's own language, using only the facts the lookup found. A person approves it later. This is where the human gate begins.\n\n## 1. Task\nFor each ticket, write one draft reply. English tickets get English drafts. French tickets get French drafts. Set the status to `waiting_for_approval`. Do not send anything.\n\n## 2. Inputs (what arrives)\n`runs/<run_id>/04_lookup.json`. Each ticket has `id`, `subject`, `body`, `language`, `category`, `priority`, `team`, `needs_human`, and `facts` (customer, order, charges, policy) with a `lookup_status`.\n\n## 3. Skills used\n`skills/draft-reply/SKILL.md`. It writes the draft: 3 to 5 sentences, polite, one clear next step, no promises. It may state only what is in `facts` or in the ticket itself. Writing a good message in two languages is judgment, so a skill does it.\n\n## 4. Scripts used\n| Script | What it checks | Prints |\n|---|---|---|\n| `scripts/check_reply.py` | Draft is not empty and is 3 to 5 sentences. Draft language matches the ticket `language` (same French versus English word count method as stage 1). Draft contains none of the banned promise phrases in `data/categories.json`. Draft names no team from the routing table and shows no priority label. Every number, date and amount in the draft is in the facts or the ticket. A claim such as \"in transit\", \"delivered\" or \"account locked\" matches the records. A billing or delivery draft names the order. Status is `waiting_for_approval`. | `OK` or `BAD <id>: <reason>` per ticket |\n| `scripts/count_check.py 05` | Tickets in equals drafts out | `COUNT OK 30 = 30` or `COUNT FAIL` |\n\n## 5. Done when\n1. `check_reply.py` prints no `BAD` line.\n2. `count_check.py 05` prints `COUNT OK`.\n3. `runs/<run_id>/05_reply.json` has one draft per ticket, each with status `waiting_for_approval`.\n\n## 6. Do not\n- MUST NOT send, email, post or export anything. This stage has no sending tool.\n- MUST NOT state a fact that is not in `facts` or the ticket. If the records have no answer, say a team member will check.\n- MUST NOT promise a refund, a delivery date, compensation, or a time limit such as \"within 24 hours\".\n- MUST NOT mix languages inside one draft. A French ticket gets all French.\n- MUST NOT mention internal things: team names, priority labels, category names.\n- MUST NOT mark a draft `approved`. Only a person does that.\n\n## 7. Next stage\n`06_audit`. Hand over `runs/<run_id>/05_reply.json`.\n",
+    "06_audit": "# 06_audit\n\nDesk 6. The teacher who checks the homework. A script samples tickets from the whole run and says PASS or FAIL. The AI does not grade itself.\n\n## 1. Task\nPick 20 tickets from the run. Check each one end to end across all five stage files. Print PASS or FAIL. Then stop and wait for a person.\n\n## 2. Inputs (what arrives)\nAll five files in `runs/<run_id>/`: `01_intake.json`, `02_classify.json`, `03_route.json`, `04_lookup.json`, `05_reply.json`.\n\n## 3. Skills used\nNone. If the same AI that wrote the replies also judged them, it would mark its own homework. A script with fixed rules is fair.\n\n## 4. Scripts used\n| Script | What it does | Prints |\n|---|---|---|\n| `scripts/audit_sample.py` | Picks 20 of 30 tickets using the fixed seed `42`, so a re-run checks the same 20. For each, runs 8 checks (below). | One line per ticket, then `AUDIT PASS 20/20` or `AUDIT FAIL 17/20` with the failing ids and the stage to fix |\n| `scripts/export_approved.py` | After a person marks drafts `approved`, writes only those to `runs/<run_id>/outbox.json`. It does not send. | `EXPORTED <n> drafts` |\n\nThe 8 checks per sampled ticket:\n1. Language tag is `EN` or `FR`.\n2. Category is in the allowed 6.\n3. Priority is in the allowed 3.\n4. Team matches the routing table for that category.\n5. Draft language equals ticket language.\n6. Draft has no banned promise phrase.\n7. Draft status is `waiting_for_approval`.\n8. Every number, date and status claim in the draft matches the records (and the draft names the order on billing and delivery tickets).\n\n## 5. Done when\n`audit_sample.py` prints `AUDIT PASS 20/20`. PASS needs all 20. The checks are exact rules, so 19 of 20 means a real bug, not noise.\n(Review note for Josh: 20 of 20 is my choice. Trove used 95 percent because flyers need human comparison. Change it if you disagree.)\n\n## 6. Do not\n- MUST NOT hide a failure or reword it as a pass.\n- MUST NOT re-run until it passes without fixing the cause.\n- MUST NOT change the seed to get an easier sample.\n- MUST NOT export or send drafts that a person has not approved.\n\n## 7. Next stage\nThere is no stage 7. After PASS, a person reads the drafts and marks each `approved` or `returned`.\n- `approved` drafts: run `export_approved.py`, then a person sends them.\n- `returned` drafts: go back to `05_reply` for those tickets only.\nAfter FAIL: go to the stage named in the failure line, fix, and re-run from that stage to 6.\n"
   },
   "skills": {
     "triage-ticket": "---\nname: triage-ticket\ndescription: Use in stage 02_classify to give one English or French support ticket a category, a priority and a needs_human flag. Output is strict JSON that scripts check afterward.\n---\n\n# triage-ticket\n\n## What this skill does\nIt reads one ticket and decides three things: the category, the priority, and whether a person must look at it. It writes one sentence explaining why, in English.\n\n## Input\nOne ticket object: `id`, `subject`, `body`, `received_at`, `language` (`EN` or `FR`). The ticket may be English or French. Read it in its own language.\n\n## Output (exactly this JSON, nothing else)\n```json\n{\"id\": \"T014\", \"category\": \"delivery\", \"priority\": \"P2\", \"needs_human\": false, \"reason\": \"Customer says the package never arrived and gives a tracking number.\"}\n```\n\n## Step by step\n1. Read the `subject` and `body`.\n2. Pick ONE category from this list. Use the meaning, not the exact words.\n\n| Category | Choose it when the customer talks about | French clues |\n|---|---|---|\n| `billing` | a charge, an invoice, a payment, a refund request | facture, paiement, remboursement, débité |\n| `delivery` | a package that is late, lost, damaged or at the wrong address | colis, livraison, retard, introuvable |\n| `account_access` | a login, a password, a locked account | mot de passe, connexion, compte bloqué |\n| `product_issue` | something that does not work or arrived broken | ne fonctionne pas, défectueux, panne |\n| `complaint` | unhappiness about the service itself, with no other clear problem | insatisfait, mauvais service, plainte |\n| `other` | anything else, or you cannot tell | |\n\n3. Pick the priority with these exact rules:\n   - `P1` if ANY is true: money was taken wrongly; the customer is locked out of their account; a package is missing for 14 days or more; the customer mentions a lawyer or legal action.\n   - `P3` if the message is a question or feedback with no problem to fix.\n   - `P2` for everything else.\n4. Set `needs_human` to `true` if the ticket is unclear, mixes two problems, or has a safety or legal angle. Otherwise `false`.\n5. Write `reason` as one sentence in English, under 25 words.\n\n## Rules\n- MUST use only the 6 categories and 3 priorities above.\n- MUST NOT invent a new category. When unsure: `other`, `P2`, `needs_human` true.\n- MUST NOT change or translate the ticket text.\n- MUST output only the JSON object. No extra words.\n\n## Examples\n\nEnglish ticket: \"I was charged twice for order 5521. Please fix this.\"\n```json\n{\"id\": \"T003\", \"category\": \"billing\", \"priority\": \"P1\", \"needs_human\": false, \"reason\": \"Customer was charged twice, so money was taken wrongly.\"}\n```\n\nFrench ticket: \"Bonjour, je voudrais savoir si vous livrez aussi le dimanche.\"\n```json\n{\"id\": \"T021\", \"category\": \"other\", \"priority\": \"P3\", \"needs_human\": false, \"reason\": \"General question about Sunday delivery with no problem to fix.\"}\n```\n\n## You know it worked when\n`scripts/check_classification.py` prints no `BAD` line for this ticket.\n",
-    "draft-reply": "---\nname: draft-reply\ndescription: Use in stage 04_reply to write one short, polite DRAFT reply to a support ticket in the ticket's own language (English or French). Never sends. Never promises.\n---\n\n# draft-reply\n\n## What this skill does\nIt writes one draft reply for one ticket. A person approves it later. The draft is never sent by this skill.\n\n## Input\nOne routed ticket: `id`, `subject`, `body`, `language`, `category`, `priority`, `team`, `needs_human`.\n\n## Output (exactly this JSON, nothing else)\n```json\n{\"id\": \"T014\", \"language\": \"EN\", \"draft\": \"Hello, thank you for contacting us. ...\", \"status\": \"waiting_for_approval\"}\n```\n\n## Step by step\n1. Look at `language`. Write the whole draft in that language. `EN` means English. `FR` means French.\n2. Write 3 to 5 sentences in this order:\n   1. Greeting.\n   2. Show you understood the problem, in your own words, in one sentence.\n   3. Say what happens next, in plain terms (\"our team will review your request\").\n   4. Closing.\n3. In French, use \"vous\" (formal). Greet with \"Bonjour\". Close with \"Cordialement,\".\n4. In English, greet with \"Hello\". Close with \"Kind regards,\".\n5. Sign English drafts \"Customer Care Team\". Sign French drafts \"L'équipe du service à la clientèle\".\n6. Set `status` to `waiting_for_approval`.\n\n## Rules\n- MUST write the whole draft in the ticket's language. MUST NOT mix languages.\n- MUST NOT promise a refund, a replacement, compensation, a date, or a time limit.\n- MUST NOT use these phrases (the script checks them, master list in `data/categories.json`):\n  - English: \"refund\", \"guarantee\", \"within 24 hours\", \"within 48 hours\", \"by tomorrow\", \"we promise\", \"compensation\"\n  - French: \"remboursement garanti\", \"nous garantissons\", \"dans les 24 heures\", \"dans les 48 heures\", \"demain\", \"nous promettons\", \"compensation\"\n- MUST NOT mention internal words: team names, priority labels, category names.\n- MUST NOT say the message was sent.\n- If `needs_human` is `true`, say that a team member will review it personally.\n\n## Examples\n\nEnglish ticket about a late package:\n```json\n{\"id\": \"T014\", \"language\": \"EN\", \"draft\": \"Hello, thank you for contacting us. We understand your package has not arrived yet and we are sorry for the worry this causes. A member of our team will review your tracking details and follow up with you. Kind regards, Customer Care Team\", \"status\": \"waiting_for_approval\"}\n```\n\nFrench ticket about a double charge:\n```json\n{\"id\": \"T003\", \"language\": \"FR\", \"draft\": \"Bonjour, merci de nous avoir écrit. Nous comprenons que vous avez été débité deux fois pour la même commande. Un membre de notre équipe va examiner votre dossier et vous répondra. Cordialement, L'équipe du service à la clientèle\", \"status\": \"waiting_for_approval\"}\n```\n\n## You know it worked when\n`scripts/check_reply.py` prints no `BAD` line for this ticket.\n"
+    "draft-reply": "---\nname: draft-reply\ndescription: Use in stage 05_reply to write one short, polite DRAFT reply, grounded in the looked up records, to a support ticket in the ticket's own language (English or French). Never sends. Never promises.\n---\n\n# draft-reply\n\n## What this skill does\nIt writes one draft reply for one ticket. A person approves it later. The draft is never sent by this skill.\n\n## Input\nOne looked up ticket: `id`, `subject`, `body`, `language`, `category`, `priority`, `team`, `needs_human`, and `facts` with `customer`, `order`, `charges`, `policy` and `lookup_status`.\n\n## Output (exactly this JSON, nothing else)\n```json\n{\"id\": \"T014\", \"language\": \"EN\", \"draft\": \"Hello, thank you for contacting us. ...\", \"status\": \"waiting_for_approval\"}\n```\n\n## Step by step\n1. Look at `language`. Write the whole draft in that language. `EN` means English. `FR` means French.\n2. Write 3 to 5 sentences in this order:\n   1. Greeting.\n   2. Show you understood the problem, or state what the records show, in one or two sentences.\n   3. Say what happens next, in plain terms (\"our team will review your request\").\n   4. Closing.\n3. In French, use \"vous\" (formal). Greet with \"Bonjour\". Close with \"Cordialement,\".\n4. In English, greet with \"Hello\". Close with \"Kind regards,\".\n5. Sign English drafts \"Customer Care Team\". Sign French drafts \"L'équipe du service à la clientèle\".\n6. Set `status` to `waiting_for_approval`.\n\n## Use the facts\n- Take every number, date, amount and status from `facts` or from the ticket. Copy them exactly.\n- On a billing or delivery ticket with an order on record, name the order number.\n- Use the `policy` text to explain how things work (for example how long a pending charge takes to clear). Do not add rules that are not in it.\n- Say \"in transit\", \"delivered\", \"locked\" or \"not shipped yet\" only when the records say so.\n- If `lookup_status` is `not_found`, say you could not match the message to a customer record and that a team member will confirm details.\n- If the records do not answer the question, say a team member will check. Do not fill the gap.\n\n## Rules\n- MUST write the whole draft in the ticket's language. MUST NOT mix languages.\n- MUST NOT promise a refund, a replacement, compensation, a date, or a time limit.\n- MUST NOT use these phrases (the script checks them, master list in `data/categories.json`):\n  - English: \"refund\", \"guarantee\", \"within 24 hours\", \"within 48 hours\", \"by tomorrow\", \"we promise\", \"compensation\"\n  - French: \"remboursement garanti\", \"nous garantissons\", \"dans les 24 heures\", \"dans les 48 heures\", \"demain\", \"nous promettons\", \"compensation\"\n- MUST NOT mention internal words: team names, priority labels, category names.\n- MUST NOT say the message was sent.\n- MUST NOT state any fact that is not in `facts` or the ticket (`scripts/grounding.py` checks this).\n- If `needs_human` is `true`, say that a team member will review it personally.\n\n## Examples\n\nEnglish ticket about a late package:\n```json\n{\"id\": \"T014\", \"language\": \"EN\", \"draft\": \"Hello, thank you for contacting us. Our records show order 7011 shipped on October 20 and that its tracking has not been updated since October 24. A member of our team will follow up with you about the next step. Kind regards, Customer Care Team\", \"status\": \"waiting_for_approval\"}\n```\n\nFrench ticket about a double charge:\n```json\n{\"id\": \"T003\", \"language\": \"FR\", \"draft\": \"Bonjour, merci de nous avoir écrit. Notre dossier montre deux paiements de 112,30 dollars pour la commande 8812, tous deux datés du 3 novembre. Un membre de notre équipe comparera les relevés et vous répondra. Cordialement, L'équipe du service à la clientèle\", \"status\": \"waiting_for_approval\"}\n```\n\n## You know it worked when\n`scripts/check_reply.py` prints no `BAD` line for this ticket.\n"
   }
 }

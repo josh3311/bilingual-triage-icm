@@ -1,7 +1,7 @@
-"""Stage 05: audit a fixed sample of tickets end to end. No AI involved.
+"""Stage 06: audit a fixed sample of tickets end to end. No AI involved.
 
 Usage: python scripts/audit_sample.py <run_id>
-Picks 20 tickets with seed 42, runs 7 checks on each, prints AUDIT PASS or AUDIT FAIL and writes 05_audit.json.
+Picks 20 tickets with seed 42, runs 8 checks on each, prints AUDIT PASS or AUDIT FAIL and writes 06_audit.json.
 PASS needs every sampled ticket to pass every check.
 """
 import sys
@@ -9,9 +9,10 @@ import sys
 from check_reply import banned_hits, internal_words
 from common import config, load_stage, routing, run_dir, seeded_sample, write_json
 from detect_language import detect
+from grounding import problems as grounding_problems
 
 # Which stage to fix when a check fails.
-STAGE_FOR_CHECK = {1: "01_intake", 2: "02_classify", 3: "02_classify", 4: "03_route", 5: "04_reply", 6: "04_reply", 7: "04_reply"}
+STAGE_FOR_CHECK = {1: "01_intake", 2: "02_classify", 3: "02_classify", 4: "03_route", 5: "05_reply", 6: "05_reply", 7: "05_reply", 8: "05_reply"}
 
 
 def failed_checks(ticket, cfg, table):
@@ -31,6 +32,8 @@ def failed_checks(ticket, cfg, table):
         failed.append(6)
     if ticket.get("status") != "waiting_for_approval":
         failed.append(7)
+    if grounding_problems(ticket):
+        failed.append(8)
     return failed
 
 
@@ -54,14 +57,14 @@ def main():
         return 2
     run_id = sys.argv[1]
     cfg, table = config(), routing()
-    result = audit(load_stage(run_id, "04_reply.json"), cfg, table)
+    result = audit(load_stage(run_id, "05_reply.json"), cfg, table)
     for r in result["results"]:
         if r["passed"]:
             print(f"{r['id']} PASS")
         else:
             stages = sorted({STAGE_FOR_CHECK[c] for c in r["failed_checks"]})
             print(f"{r['id']} FAIL checks {r['failed_checks']} -> fix {', '.join(stages)}")
-    write_json(run_dir(run_id) / "05_audit.json", {"run_id": run_id, **result})
+    write_json(run_dir(run_id) / "06_audit.json", {"run_id": run_id, **result})
     print(f"AUDIT {result['verdict']} {result['passed_count']}/{result['sample_size']}")
     return 0 if result["verdict"] == "PASS" else 1
 

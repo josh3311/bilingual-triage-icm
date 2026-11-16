@@ -4,6 +4,7 @@
     "subject": "Charged twice for my order",
     "body": "I was charged twice for order 5521 and the money has left my account. Please fix this as soon as possible.",
     "received_at": "2026-11-02",
+    "customer_id": "C001",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -13,6 +14,7 @@
     "subject": "Mon colis est en retard",
     "body": "Bonjour, mon colis devait arriver mardi et je ne l'ai toujours pas reçu. Le suivi indique encore en transit.",
     "received_at": "2026-11-03",
+    "customer_id": "C002",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -22,6 +24,7 @@
     "subject": "I cannot log in",
     "body": "I cannot log in to my account. It says my account is locked after too many attempts. I need access to place an order today.",
     "received_at": "2026-11-03",
+    "customer_id": "C003",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -31,6 +34,7 @@
     "subject": "Question sur ma facture",
     "body": "Bonjour, je ne comprends pas une ligne sur ma facture de novembre. Pouvez-vous m'expliquer ce que représentent les frais de service?",
     "received_at": "2026-11-04",
+    "customer_id": "C004",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -40,6 +44,7 @@
     "subject": "Package never arrived",
     "body": "My package was shipped on October 20 and it still has not arrived after more than three weeks. The tracking page has not changed.",
     "received_at": "2026-11-12",
+    "customer_id": "C005",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -49,6 +54,7 @@
     "subject": "Mon appareil ne fonctionne pas",
     "body": "Bonjour, l'appareil que j'ai reçu la semaine dernière ne s'allume pas du tout. J'ai essayé avec un autre câble.",
     "received_at": "2026-11-05",
+    "customer_id": "C006",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -58,6 +64,7 @@
     "subject": "Very poor service",
     "body": "I am unhappy with the service I received. I waited 40 minutes on the phone and nobody was able to help me.",
     "received_at": "2026-11-05",
+    "customer_id": "C007",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -67,6 +74,7 @@
     "subject": "Compte bloqué",
     "body": "Bonjour, mon compte est bloqué et je ne peux plus me connecter. Je dois accéder à mes commandes aujourd'hui.",
     "received_at": "2026-11-06",
+    "customer_id": "C008",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -76,6 +84,7 @@
     "subject": "Item arrived broken",
     "body": "The screen of the item I ordered arrived cracked. I have photos if you need them.",
     "received_at": "2026-11-06",
+    "customer_id": "C009",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -85,6 +94,7 @@
     "subject": "Livraison le dimanche?",
     "body": "Bonjour, je voudrais savoir si vous livrez aussi le dimanche. Merci d'avance.",
     "received_at": "2026-11-07",
+    "customer_id": "C010",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -94,6 +104,7 @@
     "subject": "Business hours question",
     "body": "Hello, what are your opening hours during the holidays? Thank you.",
     "received_at": "2026-11-07",
+    "customer_id": "C011",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -103,6 +114,7 @@
     "subject": "Colis endommagé",
     "body": "Bonjour, mon colis est arrivé avec la boîte abîmée, mais l'article semble correct. Je voulais vous le signaler.",
     "received_at": "2026-11-08",
+    "customer_id": "C012",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -112,6 +124,7 @@
     "subject": "Invoice question",
     "body": "I received an invoice with a charge I do not recognize for 14.99 dollars. Can you tell me what it is for?",
     "received_at": "2026-11-08",
+    "customer_id": "C013",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -121,6 +134,7 @@
     "subject": "Plainte formelle",
     "body": "Bonjour, c'est la troisième fois que je vous écris sans réponse. Si le problème n'est pas réglé, je vais consulter un avocat.",
     "received_at": "2026-11-09",
+    "customer_id": "C014",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -130,6 +144,7 @@
     "subject": "Wrong address on my order",
     "body": "I entered the wrong apartment number on my order. Can you update the delivery address before it ships?",
     "received_at": "2026-11-09",
+    "customer_id": "C015",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -139,6 +154,7 @@
     "subject": "Débité deux fois",
     "body": "Bonjour, j'ai été débité deux fois pour ma commande 8812. Le montant a quitté mon compte mardi.",
     "received_at": "2026-11-10",
+    "customer_id": "C016",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -148,6 +164,7 @@
     "subject": "A few problems",
     "body": "My package is late and my invoice looks wrong. I also have a question about your return policy.",
     "received_at": "2026-11-10",
+    "customer_id": "C017",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -157,6 +174,7 @@
     "subject": "L'application plante",
     "body": "Bonjour, l'application se ferme toute seule quand j'ouvre mon panier. J'ai déjà réinstallé l'application.",
     "received_at": "2026-11-10",
+    "customer_id": "C018",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -166,6 +184,7 @@
     "subject": "Password reset email missing",
     "body": "I requested a password reset email twice but nothing arrives. I am still logged in on my phone, so it is not urgent.",
     "received_at": "2026-11-11",
+    "customer_id": "C019",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -175,6 +194,7 @@
     "subject": "Service insatisfaisant",
     "body": "Bonjour, je suis insatisfait du service reçu hier. L'employé n'était pas poli et n'a pas voulu m'aider.",
     "received_at": "2026-11-11",
+    "customer_id": "C020",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -184,6 +204,7 @@
     "subject": "Nice website",
     "body": "Just wanted to say your new website is easy to use. Thank you!",
     "received_at": "2026-11-11",
+    "customer_id": "C021",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -193,6 +214,7 @@
     "subject": "Mon dossier",
     "body": "Bonjour, j'ai un problème avec mon dossier. Merci de me rappeler.",
     "received_at": "2026-11-12",
+    "customer_id": "C022",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -202,6 +224,7 @@
     "subject": "Package delayed",
     "body": "My package was due on Monday and the tracking page has not changed in three days.",
     "received_at": "2026-11-12",
+    "customer_id": "C023",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -211,6 +234,7 @@
     "subject": "Changer mon courriel",
     "body": "Bonjour, je voudrais changer l'adresse courriel de mon compte. Comment dois-je faire?",
     "received_at": "2026-11-12",
+    "customer_id": "C024",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -220,6 +244,7 @@
     "subject": "Receipt request",
     "body": "Could you send me a copy of the receipt for my last order? I need it for my records. Thank you.",
     "received_at": "2026-11-13",
+    "customer_id": "C025",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -229,6 +254,7 @@
     "subject": "Pièce manquante",
     "body": "Bonjour, il manque une vis dans la boîte de montage de mon meuble. Pouvez-vous m'en envoyer une?",
     "received_at": "2026-11-13",
+    "customer_id": "C026",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -238,6 +264,7 @@
     "subject": "Rude agent",
     "body": "The agent I spoke to yesterday was rude and hung up on me. I would like someone to review the call.",
     "received_at": "2026-11-13",
+    "customer_id": "C027",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -247,6 +274,7 @@
     "subject": "Colis jamais arrivé",
     "body": "Bonjour, mon colis a été expédié le 28 octobre et il n'est toujours pas arrivé. Cela fait plus de trois semaines.",
     "received_at": "2026-11-14",
+    "customer_id": "C028",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -256,6 +284,7 @@
     "subject": "App crashes",
     "body": "The app crashes every time I open my cart. I have reinstalled it and the problem is still there.",
     "received_at": "2026-11-14",
+    "customer_id": "C029",
     "language": "EN",
     "language_confidence": "high",
     "status": "intake_ok"
@@ -265,6 +294,7 @@
     "subject": "Frais inconnus",
     "body": "Bonjour, il y a des frais de 14,99 dollars sur mon relevé que je ne reconnais pas. Pouvez-vous me dire à quoi ils correspondent?",
     "received_at": "2026-11-14",
+    "customer_id": "C030",
     "language": "FR",
     "language_confidence": "high",
     "status": "intake_ok"
